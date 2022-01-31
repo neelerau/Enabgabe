@@ -23,12 +23,29 @@ h1 {
     border-radius: 10px;
 }
 
+#nosalad {
+    width: 60px;
+    height: 60px;
+    left: 30px;
+    top: 115px;
+    position:absolute;
+    display: flex;
+
+}
+
 #buttonsalad {
     width: 50px;
     height: 50px;
     left: 430px;
     top: 120px;
     position:absolute;
+}
+
+.salad {
+    position: absolute;
+    left: 480px;
+    top: 117px;
+    background-color: white;
 }
 
 #buttonsaladKitchen {
@@ -39,21 +56,16 @@ h1 {
     position:absolute;
 }
 
-#nosalad {
-    width: 60px;
-    height: 60px;
+
+#timer {
+    width: 70px;
+    height: 70px;
     left: 30px;
-    top: 117px;
+    top: 110px;
     position:absolute;
 
 }
-
 .is-hidden {
     display: none !important;
 }
-.salad {
-    position: absolute;
-    left: 480px;
-    top: 117px;
-    background-color: white;
-}
+

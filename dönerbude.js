@@ -1,7 +1,8 @@
 var Dönerladen;
 (function (Dönerladen) {
-    var nosalad = document.getElementById("nosalad");
     var salad = document.getElementById("buttonsalad");
+    var nosalad = document.getElementById("nosalad");
+    var timer = document.getElementById("timerr");
     var saladges = 10;
     var saladimg = false;
     var buttonsalad = false;
@@ -19,9 +20,25 @@ var Dönerladen;
     function saladMenge() {
         document.querySelector(".salad").innerHTML = "" + saladges;
     }
+    nosalad.addEventListener("click", function () {
+        if (buttonsalad == true) {
+            saladges = 10;
+            nosalad.classList.add("is-hidden");
+            timer.classList.remove("is-hidden");
+            for (var i = 0; i <= 3; i++)
+                ;
+            //console.log("Hi");
+            setTimeout(function () {
+                salad.classList.remove("is-hidden");
+                timer.classList.add("is-hidden");
+                saladMenge();
+            }, 5000);
+        }
+    });
     function noSalad() {
         if (saladimg == true) {
             buttonsalad = true;
+            saladges = 10;
         }
     }
 })(Dönerladen || (Dönerladen = {}));

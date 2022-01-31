@@ -1,4 +1,4 @@
-namespace dönerbude { 
+namespace Dönerladen { 
 
     window.addEventListener("load", handleLoad);
 
