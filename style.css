@@ -1,0 +1,59 @@
+
+html{
+    background: url("images/background.jpg") no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#newSimulation {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    color: white;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#buttonsalad {
+    width: 50px;
+    height: 50px;
+    left: 430px;
+    top: 120px;
+    position:absolute;
+}
+
+#buttonsaladKitchen {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+    top: 115px;
+    position:absolute;
+}
+
+#nosalad {
+    width: 60px;
+    height: 60px;
+    left: 30px;
+    top: 117px;
+    position:absolute;
+
+}
+
+.is-hidden {
+    display: none !important;
+}
+.salad {
+    position: absolute;
+    left: 480px;
+    top: 117px;
+    background-color: white;
+}
