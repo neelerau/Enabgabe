@@ -17,28 +17,27 @@ var Dönerladen;
         saladMenge();
         noSalad();
     });
-    function saladMenge() {
-        document.querySelector(".salad").innerHTML = "" + saladges;
-    }
     nosalad.addEventListener("click", function () {
         if (buttonsalad == true) {
             saladges = 10;
             nosalad.classList.add("is-hidden");
-            timer.classList.remove("is-hidden");
-            for (var i = 0; i <= 3; i++)
-                ;
+            salad.classList.remove("is-hidden");
+            //for (let i: number = 0; i <= 3; i++);
             //console.log("Hi");
             setTimeout(function () {
+                timer.classList.remove("is-hidden");
                 salad.classList.remove("is-hidden");
                 timer.classList.add("is-hidden");
                 saladMenge();
             }, 5000);
         }
     });
+    function saladMenge() {
+        document.querySelector(".salad").innerHTML = "" + saladges;
+    }
     function noSalad() {
         if (saladimg == true) {
             buttonsalad = true;
-            saladges = 10;
         }
     }
 })(Dönerladen || (Dönerladen = {}));

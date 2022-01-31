@@ -20,34 +20,37 @@ namespace Dönerladen {
     
     });
 
-    
-    function saladMenge(): void {
-        (document.querySelector(".salad")as HTMLInputElement).innerHTML = "" + saladges;
-    }
-    
 
     nosalad.addEventListener("click", function (): void {
         if (buttonsalad == true) {
             saladges = 10;
             nosalad.classList.add("is-hidden");
-            timer.classList.remove("is-hidden");
-            for (let i: number = 0; i <= 3; i++);
+            salad.classList.remove("is-hidden");
+            //for (let i: number = 0; i <= 3; i++);
             //console.log("Hi");
             setTimeout(function (): void {
+                timer.classList.remove("is-hidden");
                 salad.classList.remove("is-hidden");
                 timer.classList.add("is-hidden");
                 saladMenge();
             },         5000);
         }
+
      }); 
 
+    
+    function saladMenge(): void {
+        (document.querySelector(".salad")as HTMLInputElement).innerHTML = "" + saladges;
+    }
+    
     function noSalad(): void {
         if (saladimg == true) {
             buttonsalad = true;
-            saladges = 10;
 
             
         }
     } 
+
+
     }
     
