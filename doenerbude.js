@@ -124,4 +124,4 @@ var Dönerladen;
         Dönerladen.crc2.closePath();
     }
 })(Dönerladen || (Dönerladen = {}));
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=doenerbude.js.map

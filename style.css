@@ -23,10 +23,11 @@ h1 {
     border-radius: 10px;
 }
 
+
 #nosalad {
-    width: 60px;
-    height: 60px;
-    left: 30px;
+    width: 70px;
+    height: 70px;
+    left: 32px;
     top: 115px;
     position:absolute;
     display: flex;
@@ -49,6 +50,13 @@ h1 {
     background-color: white;
 }
 
+.saladKitchen {
+    position: absolute;
+    left: 100px;
+    top: 117px;
+    background-color: white;
+}
+
 #buttonsaladKitchen {
     width: 70px;
     height: 70px;
@@ -58,15 +66,219 @@ h1 {
 }
 
 
-#timer {
-    width: 70px;
-    height: 70px;
-    left: 30px;
-    top: 110px;
+#timersalad {
+    width: 30px;
+    height: 30px;
+    left: 55px;
+    top: 90px;
     position:absolute;
 
 }
+
 .is-hidden {
     display: none !important;
 }
 
+#notomato {
+    width: 70px;
+    height: 70px;
+    left: 32px;
+    top: 215px;
+    position:absolute;
+    z-index: 1000;
+
+}
+
+#buttontomato {
+    width: 50px;
+    height: 50px;
+    left: 430px;
+    top: 195px;
+    position:absolute;
+}
+
+.tomato {
+    position: absolute;
+    left: 480px;
+    top: 190px;
+    background-color: white;
+}
+
+.tomatoKitchen {
+    position: absolute;
+    left: 100px;
+    top: 217px;
+    background-color: white;
+}
+
+#buttontomatoKitchen {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+    top: 220px;
+    position:absolute;
+}
+
+#timertomato {
+    width: 30px;
+    height: 30px;
+    left: 55px;
+    top: 190px;
+    position:absolute;
+
+}
+
+#noonion {
+    width: 70px;
+    height: 70px;
+    left: 32px;
+    top: 315px;
+    position:absolute;
+    z-index: 1000;
+
+}
+
+#buttononion {
+    width: 50px;
+    height: 50px;
+    left: 430px;
+    top: 265px;
+    position:absolute;
+}
+
+.onion {
+    position: absolute;
+    left: 480px;
+    top: 250px;
+    background-color: white;
+}
+
+.onionKitchen {
+    position: absolute;
+    left: 100px;
+    top: 317px;
+    background-color: white;
+}
+
+#buttononionKitchen {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+    top: 320px;
+    position:absolute;
+}
+
+#timeronion {
+    width: 30px;
+    height: 30px;
+    left: 55px;
+    top: 290px;
+    position:absolute;
+
+}
+
+#buttondoughKitchen {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+    top: 220px;
+    position:absolute;
+}
+
+#nodough {
+    width: 70px;
+    height: 70px;
+    left: 32px;
+    top: 415px;
+    position:absolute;
+    z-index: 1000;
+
+}
+
+#buttondough {
+    width: 50px;
+    height: 50px;
+    left: 430px;
+    top: 330px;
+    position:absolute;
+}
+
+.dough {
+    position: absolute;
+    left: 480px;
+    top: 330px;
+    background-color: white;
+}
+
+.doughKitchen {
+    position: absolute;
+    left: 100px;
+    top: 420px;
+    background-color: white;
+}
+
+#buttondoughKitchen {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+    top: 420px;
+    position:absolute;
+}
+
+#timerdough {
+    width: 30px;
+    height: 30px;
+    left: 55px;
+    top: 390px;
+    position:absolute;
+
+}
+#nomeet {
+    width: 70px;
+    height: 70px;
+    left: 32px;
+    top: 515px;
+    position:absolute;
+    display: flex;
+    z-index: 1000;
+
+}
+
+#buttonmeet {
+    width: 50px;
+    height: 50px;
+    left: 430px;
+    top: 400px;
+    position:absolute;
+}
+
+.meet {
+    position: absolute;
+    left: 480px;
+    top: 400px;
+    background-color: white;
+}
+
+.meetKitchen {
+    position: absolute;
+    left: 100px;
+    top: 517px;
+    background-color: white;
+}
+
+#buttonmeetKitchen {
+    width: 70px;
+    height: 70px;
+    left: 30px;
+    top: 520px;
+    position:absolute;
+}
+
+#timermeet {
+    width: 30px;
+    height: 30px;
+    left: 55px;
+    top: 490px;
+    position:absolute;
+
+}
