@@ -9,56 +9,64 @@
     <link rel="stylesheet" href="style.css">
     <script src="ingredients.js" defer></script>
     <script src="doenerbude.js" defer></script>
+    <script src="moveable.js" defer></script>
+    <script src="vector.js" defer></script>
+    <script src="customer.js" defer></script>
     <title>Dönderbude</title>
 </head>
 
 <body>
     <h1>Döner-Simulator</h1>
 
-    <canvas id="canvas" width="2000" height="900"></canvas>
-
-    <button id="newSimulaton"> New Simulation</button>
-
-    <div class="Zutaten">
-
-        <div class="salad"> 10</div>
-        <div class="saladKitchen">10</div>
-        <img id="nosalad" class="is-hidden" src="images/zutaten/nosalad.png"> </img>
-        <img id="buttonsaladKitchen" src="images/zutaten/salad.png"> </img>
-        <img id="buttonsalad" src="images/zutaten/salad.png"> </img>
-        <img id="timersalad" class="is-hidden" src="images/zutaten/timersalad.png">
-
-        <div class="tomato"> 10</div>
-        <div class="tomatoKitchen">10</div>
-        <img id="notomato" class="is-hidden" src="images/zutaten/notomato.png"> </img>
-        <img id="buttontomatoKitchen" src="images/zutaten/tomato.png"> </img>
-        <img id="buttontomato" src="images/zutaten/tomato.png"> </img>
-        <img id="timertomato" class="is-hidden" src="images/zutaten/timertomato.png">
-
-        <div class="onion"> 10</div>
-        <div class="onionKitchen">10</div>
-        <img id="noonion" class="is-hidden" src="images/zutaten/noonion.png"> </img>
-        <img id="buttononionKitchen" src="images/zutaten/onion.png"> </img>
-        <img id="buttononion" src="images/zutaten/onion.png"> </img>
-        <img id="timeronion" class="is-hidden" src="images/zutaten/timeronion.png">
-
-        <div class="dough"> 10</div>
-        <div class="doughKitchen">10</div>
-        <img id="nodough" class="is-hidden" src="images/zutaten/nodough.png"> </img>
-        <img id="buttondoughKitchen" src="images/zutaten/dough.png"> </img>
-        <img id="buttondough" src="images/zutaten/dough.png"> </img>
-        <img id="timerdough" class="is-hidden" src="images/zutaten/timerdough.png">
-
-        <div class="meet"> 10</div>
-        <div class="meetKitchen">10</div>
-        <img id="nomeet" class="is-hidden" src="images/zutaten/nomeet.png"> </img>
-        <img id="buttonmeetKitchen" src="images/zutaten/meet.png"> </img>
-        <img id="buttonmeet" src="images/zutaten/meet.png"> </img>
-        <img id="timermeet" class="is-hidden" src="images/zutaten/timermeet.png">
 
 
-
+    <div id="Bestellung">
+        <button class="bestellungbutton">Bestellung</button>
     </div>
+
+
+        <canvas id="canvas" width="2000" height="900"></canvas>
+
+        <button id="newSimulaton"> New Simulation</button>
+
+
+        <div class="Zutaten">
+
+            <div class="salad"> 10</div>
+            <div class="saladKitchen">10</div>
+            <img id="nosalad" class="is-hidden" src="images/zutaten/nosalad.png"> </img>
+            <img id="buttonsaladKitchen" src="images/zutaten/salad.png"> </img>
+            <img id="buttonsalad" src="images/zutaten/salad.png"> </img>
+            <img id="timersalad" class="is-hidden" src="images/zutaten/timersalad.png">
+
+            <div class="tomato"> 10</div>
+            <div class="tomatoKitchen">10</div>
+            <img id="notomato" class="is-hidden" src="images/zutaten/notomato.png"> </img>
+            <img id="buttontomatoKitchen" src="images/zutaten/tomato.png"> </img>
+            <img id="buttontomato" src="images/zutaten/tomato.png"> </img>
+            <img id="timertomato" class="is-hidden" src="images/zutaten/timertomato.png">
+
+            <div class="onion"> 10</div>
+            <div class="onionKitchen">10</div>
+            <img id="noonion" class="is-hidden" src="images/zutaten/noonion.png"> </img>
+            <img id="buttononionKitchen" src="images/zutaten/onion.png"> </img>
+            <img id="buttononion" src="images/zutaten/onion.png"> </img>
+            <img id="timeronion" class="is-hidden" src="images/zutaten/timeronion.png">
+
+            <div class="dough"> 10</div>
+            <div class="doughKitchen">10</div>
+            <img id="nodough" class="is-hidden" src="images/zutaten/nodough.png"> </img>
+            <img id="buttondoughKitchen" src="images/zutaten/dough.png"> </img>
+            <img id="buttondough" src="images/zutaten/dough.png"> </img>
+            <img id="timerdough" class="is-hidden" src="images/zutaten/timerdough.png">
+
+            <div class="meet"> 10</div>
+            <div class="meetKitchen">10</div>
+            <img id="nomeet" class="is-hidden" src="images/zutaten/nomeet.png"> </img>
+            <img id="buttonmeetKitchen" src="images/zutaten/meet.png"> </img>
+            <img id="buttonmeet" src="images/zutaten/meet.png"> </img>
+            <img id="timermeet" class="is-hidden" src="images/zutaten/timermeet.png">
+
 
 
 </body>

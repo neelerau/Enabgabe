@@ -21,7 +21,6 @@ var Dönerladen;
     });
     nosalad.addEventListener("click", function () {
         if (buttonsalad == true) {
-            saladges = 10;
             saladgesKitchen--;
             nosalad.classList.add("is-hidden");
             timersalad.classList.remove("is-hidden");
@@ -30,6 +29,7 @@ var Dönerladen;
             setTimeout(function () {
                 salad.classList.remove("is-hidden");
                 timersalad.classList.add("is-hidden");
+                saladges = 10;
                 saladMenge();
             }, 5000);
         }
@@ -66,7 +66,6 @@ var Dönerladen;
     });
     notomato.addEventListener("click", function () {
         if (buttontomato == true) {
-            tomatoges = 10;
             tomatogesKitchen--;
             notomato.classList.add("is-hidden");
             timertomato.classList.remove("is-hidden");
@@ -75,6 +74,7 @@ var Dönerladen;
             setTimeout(function () {
                 tomato.classList.remove("is-hidden");
                 timertomato.classList.add("is-hidden");
+                tomatoges = 10;
                 tomatoValue();
             }, 5000);
         }
@@ -111,7 +111,6 @@ var Dönerladen;
     });
     noonion.addEventListener("click", function () {
         if (buttononion == true) {
-            onionges = 10;
             oniongesKitchen--;
             noonion.classList.add("is-hidden");
             timeronion.classList.remove("is-hidden");
@@ -120,6 +119,7 @@ var Dönerladen;
             setTimeout(function () {
                 onion.classList.remove("is-hidden");
                 timeronion.classList.add("is-hidden");
+                onionges = 10;
                 onionValue();
             }, 5000);
         }
@@ -156,7 +156,6 @@ var Dönerladen;
     });
     nodough.addEventListener("click", function () {
         if (buttondough == true) {
-            doughges = 10;
             doughgesKitchen--;
             nodough.classList.add("is-hidden");
             timerdough.classList.remove("is-hidden");
@@ -165,6 +164,7 @@ var Dönerladen;
             setTimeout(function () {
                 dough.classList.remove("is-hidden");
                 timerdough.classList.add("is-hidden");
+                doughges = 10;
                 doughValue();
             }, 5000);
         }
@@ -201,7 +201,6 @@ var Dönerladen;
     });
     nomeet.addEventListener("click", function () {
         if (buttonmeet == true) {
-            meetges = 10;
             meetgesKitchen--;
             nomeet.classList.add("is-hidden");
             timermeet.classList.remove("is-hidden");
@@ -210,6 +209,7 @@ var Dönerladen;
             setTimeout(function () {
                 meet.classList.remove("is-hidden");
                 timermeet.classList.add("is-hidden");
+                meetges = 10;
                 meetValue();
             }, 5000);
         }
@@ -224,6 +224,36 @@ var Dönerladen;
         if (meetimg == true) {
             buttonmeet = true;
         }
+    }
+    //Bestellungsausgabe
+    var customerOrder = document.querySelector(".bestellungbutton");
+    var order = false;
+    var openorder = [
+        {
+            img: "images/zutaten/salad.png"
+        },
+        {
+            img: "images/zutaten/tomato.png"
+        },
+        {
+            img: "images/zutaten/onion.png"
+        },
+        {
+            img: "images/zutaten/meet.png"
+        }
+    ];
+    customerOrder.addEventListener("click", function () {
+        mixOrder(openorder);
+        showOrder();
+        console.log("bestellung");
+    });
+    function showOrder() {
+        document.getElementById("Bestellung").innerHTML = "Bestellung:" + openorder;
+        console.log("order");
+    }
+    function mixOrder(array) {
+        (Math.floor(Math.random() * openorder.length));
+        console.log("random");
     }
 })(Dönerladen || (Dönerladen = {}));
 //# sourceMappingURL=ingredients.js.map

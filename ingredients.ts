@@ -25,7 +25,6 @@ namespace Dönerladen {
 
     nosalad.addEventListener("click", function (): void {
         if (buttonsalad == true) {
-            saladges = 10;
             saladgesKitchen --;
             nosalad.classList.add("is-hidden");
             timersalad.classList.remove("is-hidden");
@@ -35,6 +34,7 @@ namespace Dönerladen {
             setTimeout(function (): void {
                 salad.classList.remove("is-hidden");
                 timersalad.classList.add("is-hidden");
+                saladges = 10;
                 saladMenge();
             },         5000);
         }
@@ -83,7 +83,6 @@ namespace Dönerladen {
 
     notomato.addEventListener("click", function (): void {
         if (buttontomato == true) {
-            tomatoges = 10;
             tomatogesKitchen --;
             notomato.classList.add("is-hidden");
             timertomato.classList.remove("is-hidden");
@@ -93,6 +92,7 @@ namespace Dönerladen {
             setTimeout(function (): void {
                 tomato.classList.remove("is-hidden");
                 timertomato.classList.add("is-hidden");
+                tomatoges = 10;
                 tomatoValue();
             },         5000);
         }
@@ -141,7 +141,6 @@ namespace Dönerladen {
  
     noonion.addEventListener("click", function (): void {
          if (buttononion == true) {
-             onionges = 10;
              oniongesKitchen --;
              noonion.classList.add("is-hidden");
              timeronion.classList.remove("is-hidden");
@@ -151,6 +150,7 @@ namespace Dönerladen {
              setTimeout(function (): void {
                  onion.classList.remove("is-hidden");
                  timeronion.classList.add("is-hidden");
+                 onionges = 10;
                  onionValue();
              },         5000);
          }
@@ -198,7 +198,6 @@ namespace Dönerladen {
  
     nodough.addEventListener("click", function (): void {
          if (buttondough == true) {
-             doughges = 10;
              doughgesKitchen --;
              nodough.classList.add("is-hidden");
              timerdough.classList.remove("is-hidden");
@@ -208,6 +207,7 @@ namespace Dönerladen {
              setTimeout(function (): void {
                  dough.classList.remove("is-hidden");
                  timerdough.classList.add("is-hidden");
+                 doughges = 10;
                  doughValue();
              },         5000);
          }
@@ -255,7 +255,6 @@ namespace Dönerladen {
  
     nomeet.addEventListener("click", function (): void {
          if (buttonmeet == true) {
-             meetges = 10;
              meetgesKitchen --;
              nomeet.classList.add("is-hidden");
              timermeet.classList.remove("is-hidden");
@@ -265,6 +264,7 @@ namespace Dönerladen {
              setTimeout(function (): void {
                  meet.classList.remove("is-hidden");
                  timermeet.classList.add("is-hidden");
+                 meetges = 10;
                  meetValue();
              },         5000);
          }
@@ -286,6 +286,54 @@ namespace Dönerladen {
              
          }
      }      
- 
+
+     //Bestellungsausgabe
+
+    const customerOrder: Element = (document.querySelector(".bestellungbutton")as HTMLElement); 
+    var order: Boolean = false;
+
+    interface Ingrediens {
+        img: string;
     }
+    var openorder: Ingrediens[] = [
+         {
+             img: "images/zutaten/salad.png"
+         },
+         {
+            img: "images/zutaten/tomato.png"
+        },
+        {
+            img: "images/zutaten/onion.png"
+        },
+        {
+            img: "images/zutaten/meet.png"
+        }
+
+    ];
+
+
+    customerOrder.addEventListener("click", function(): void {
+        mixOrder (openorder);
+        showOrder();  
+        console.log("bestellung");
+        
+
+            
+
+
+    });
+
+    function showOrder(): void {
+        (document.getElementById("Bestellung")as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
+        console.log("order");
+    }    
+
+    function mixOrder (array: Array<Ingrediens>): void {
+        (Math.floor(Math.random() * openorder.length));
+        console.log("random");
+        }
+}
+
+ 
+
     

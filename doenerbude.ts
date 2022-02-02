@@ -5,6 +5,8 @@ namespace Dönerladen {
     export let canvas: HTMLCanvasElement;
     export let crc2: CanvasRenderingContext2D;
 
+    let moveables: Moveable[] = [];
+
 
     function handleLoad(_event: Event): void {
 
@@ -25,8 +27,18 @@ namespace Dönerladen {
         drawDoughKitchen ();
         drawMeetKitchen ();
 
+        createCustomer(1);
+
     }
-//Gesammtes Feld der Simulation
+
+    function createCustomer(_amound: number): void {
+        for (let i: number = 0; i < 10; i++) {
+            let customer: Moveable = new Customer();
+            moveables.push(customer);
+        }
+    }
+    
+//Gesamtes Feld der Simulation
     function drawOutline (): void {
         crc2.beginPath();
         crc2.fillStyle = "#e9dad3";

@@ -1,6 +1,7 @@
 var Dönerladen;
 (function (Dönerladen) {
     window.addEventListener("load", handleLoad);
+    var moveables = [];
     function handleLoad(_event) {
         var canvas = document.querySelector("canvas");
         Dönerladen.crc2 = canvas.getContext("2d");
@@ -18,8 +19,15 @@ var Dönerladen;
         drawOnionsKitchen();
         drawDoughKitchen();
         drawMeetKitchen();
+        createCustomer(1);
     }
-    //Gesammtes Feld der Simulation
+    function createCustomer(_amound) {
+        for (var i = 0; i < 10; i++) {
+            var customer = new Dönerladen.Customer();
+            moveables.push(customer);
+        }
+    }
+    //Gesamtes Feld der Simulation
     function drawOutline() {
         Dönerladen.crc2.beginPath();
         Dönerladen.crc2.fillStyle = "#e9dad3";
