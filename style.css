@@ -10,7 +10,34 @@ h1 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.ingrediens {
+    display: flex;
+}
 
+
+#settings {
+    width: 500px;
+    height: 500px;
+    background-color:white;
+    opacity: 80%;
+    position: absolute;
+    text-align: center;
+    top: 100px;
+    left: 400px;
+    color: grey;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 40px;
+}
+
+#startbutton {
+    color: grey;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    font-size: 20px;
+
+
+}
 
 #newSimulation {
     position: absolute;
@@ -93,6 +120,7 @@ h1 {
 .is-hidden {
     display: none !important;
 }
+
 
 #notomato {
     width: 70px;

@@ -230,30 +230,73 @@ var Dönerladen;
     var order = false;
     var openorder = [
         {
-            img: "images/zutaten/salad.png"
+            ingredient: "Salat"
         },
         {
-            img: "images/zutaten/tomato.png"
+            ingredient: "Tomaten"
         },
         {
-            img: "images/zutaten/onion.png"
+            ingredient: "Zwiebeln"
         },
         {
-            img: "images/zutaten/meet.png"
+            ingredient: "Fleisch"
         }
     ];
     customerOrder.addEventListener("click", function () {
-        mixOrder(openorder);
-        showOrder();
-        console.log("bestellung");
+        if (order == true) {
+            mixOrder();
+            showOrder();
+            console.log(openorder);
+        }
     });
     function showOrder() {
         document.getElementById("Bestellung").innerHTML = "Bestellung:" + openorder;
         console.log("order");
     }
-    function mixOrder(array) {
+    function mixOrder() {
         (Math.floor(Math.random() * openorder.length));
         console.log("random");
     }
 })(Dönerladen || (Dönerladen = {}));
+//     const customerOrder: Element = (document.querySelector(".bestellungbutton")as HTMLElement); 
+//     var order: Boolean = false;
+//     interface Ingrediens {
+//         img: string;
+//     }
+//     var openorder: Ingrediens[] = [
+//          {
+//              img: "images/Zutaten/salad.png"
+//          },
+//          {
+//             img: "images/Zutaten/tomato.png"
+//         },
+//         {
+//             img: "images/Zutaten/onion.png"
+//         },
+//         {
+//             img: "images/Zutaten/meet.png"
+//         }
+//     ];
+//     var createClass: number = 0;
+//     var imgArray: HTMLImageElement[] = [];
+//     customerOrder.addEventListener("click", function(): void {
+//         if (order == true) {
+//             let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
+//             createImg.src = openorder[parseFloat(createImg.className)].img;
+//             createImg.classList.add(createClass.toString());
+//             imgArray.push(createImg);
+//             mixOrder(openorder);
+//             showOrder();  
+//             console.log(openorder);
+//         }
+//     });
+//     function showOrder(): void {
+//         (document.getElementById("Bestellung")as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
+//         console.log("order");
+//     }    
+//     function mixOrder (array: Array<Ingrediens>): void {
+//         (Math.floor(Math.random() * openorder.length));
+//         console.log("random");
+//         }
+// }
 //# sourceMappingURL=ingredients.js.map

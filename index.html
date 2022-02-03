@@ -7,30 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
     <script src="ingredients.js" defer></script>
     <script src="doenerbude.js" defer></script>
     <script src="moveable.js" defer></script>
     <script src="vector.js" defer></script>
-    <script src="customer.js" defer></script>
     <title>Dönderbude</title>
 </head>
 
 <body>
     <h1>Döner-Simulator</h1>
 
+   <div class="container"> 
+       <canvas id="canvas" width="2000" height="900"></canvas>
 
+    <div id="settingsContainer">
+        <div id="settings">
+            <form>
+                <h2>Simulator Konfiguration</h2>
+                <br>
+                <fieldset>
+                    <legend> <b>Employees</b> </legend>
+                    minimum
+                    <input type="range" name="MinimumEmployeeSlider" value="1" min="1" max="3">
+                    maximum
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend> <b>Customers</b> </legend>
+                    minimum
+                    <input type="range" name="MinimumCustomerSlider" value="1" min="1" max="3">
+                    maximum
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend> <b>Ingrediens capacity</b> </legend>
+                    minimum
+                    <input type="range" name="MinimumIngediensdSlider" value="1" min="1" max="3">
+                    maximum
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend> <b>Resources capacity</b> </legend>
+                    minimum
+                    <input type="range" name="MinimumResourcesSlider" value="1" min="1" max="3">
+                    maximum
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend> <b>Employees condition</b> </legend>
+                    minimum
+                    <input type="range" name="MinimumConditionSlider" value="1" min="1" max="3">
+                    maximum
+                </fieldset>
+                <br>
 
-    <div id="Bestellung">
-        <button class="bestellungbutton">Bestellung</button>
+                <div id="startbutton"> <button> Start Simulation </button></div>
+
+            </form>
+
+        </div>
+
     </div>
 
 
-        <canvas id="canvas" width="2000" height="900"></canvas>
-
-        <button id="newSimulaton"> New Simulation</button>
-
-
-        <div class="Zutaten">
+        <div id="ingrediens" class="is-hidden">
 
             <div class="salad"> 10</div>
             <div class="saladKitchen">10</div>
@@ -67,6 +108,13 @@
             <img id="buttonmeet" src="images/Zutaten/meet.png"> </img>
             <img id="timermeet" class="is-hidden" src="images/Zutaten/timermeet.png">
 
+            <div id="Bestellung">
+                <button class="bestellungbutton">Bestellung</button>
+            </div>
+            <button id="newSimulaton" class="is-hidden"> New Simulation</button>
+        </div>
+
+</div>
 
 
 </body>
