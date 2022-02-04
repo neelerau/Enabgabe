@@ -328,7 +328,7 @@ namespace Dönerladen {
         }
     }
 
-    //Salad Resourcen leer
+    //Onion Resourcen leer
     noonion.addEventListener("click", function (): void {
         noonionleft();
     });
@@ -344,46 +344,47 @@ namespace Dönerladen {
             console.log("ende");
 
         }
+    }
 
 
-        //Dough Resourcen leer
-        nodough.addEventListener("click", function (): void {
+    //Dough Resourcen leer
+    nodough.addEventListener("click", function (): void {
             nodoughleft();
         });
 
-        function nodoughleft(): void {
-            if (doughgesKitchen == -1) {
-                doughimg = true;
-                ingrediens.classList.add("is-hidden");
-                reloadbutton.classList.remove("is-hidden");
+    function nodoughleft(): void {
+        if (doughgesKitchen == -1) {
+            doughimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
 
 
-                window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
-                console.log("ende");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
 
-            }
         }
+    }
 
-        //Meet Resourcen leer
-        nomeet.addEventListener("click", function (): void {
+    //Meet Resourcen leer
+    nomeet.addEventListener("click", function (): void {
             nomeetleft();
         });
 
-        function nomeetleft(): void {
-            if (meetgesKitchen == -1) {
-                meetimg = true;
-                ingrediens.classList.add("is-hidden");
-                reloadbutton.classList.remove("is-hidden");
+    function nomeetleft(): void {
+        if (meetgesKitchen == -1) {
+            meetimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
 
 
-                window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
-                console.log("ende");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
 
-            }
         }
+    }
 
         //Bei Klick auf Reloudbutton, startet die Simulation neu
-        reloadbutton.addEventListener("click", function (): void {
+    reloadbutton.addEventListener("click", function (): void {
             location.reload();
         });
     }
@@ -412,53 +413,53 @@ namespace Dönerladen {
     // }
 
 
-    const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
-    var order: Boolean = false;
+    // const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
+    // var order: Boolean = false;
 
-    interface Ingrediens {
-        img: string;
-    }
-    var openorder: Ingrediens[] = [
-        {
-            img: "images/Zutaten/salad.png"
-        },
-        {
-            img: "images/Zutaten/tomato.png"
-        },
-        {
-            img: "images/Zutaten/onion.png"
-        },
-        {
-            img: "images/Zutaten/meet.png"
-        }
+    // interface Ingrediens {
+    //     img: string;
+    // }
+    // var openorder: Ingrediens[] = [
+    //     {
+    //         img: "images/Zutaten/salad.png"
+    //     },
+    //     {
+    //         img: "images/Zutaten/tomato.png"
+    //     },
+    //     {
+    //         img: "images/Zutaten/onion.png"
+    //     },
+    //     {
+    //         img: "images/Zutaten/meet.png"
+    //     }
 
-    ];
+    // ];
 
-    var createClass: number = 0;
-    var imgArray: HTMLImageElement[] = [];
-    customerOrder.addEventListener("click", function (): void {
-        if (order == true) {
-            let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
-            createImg.src = openorder[parseFloat(createImg.className)].img;
-            createImg.classList.add(createClass.toString());
-            imgArray.push(createImg);
-            mixOrder(openorder);
-            showOrder();
-            console.log(openorder);
-        }
+    // var createClass: number = 0;
+    // var imgArray: HTMLImageElement[] = [];
+    // customerOrder.addEventListener("click", function (): void {
+    //     if (order == true) {
+    //         let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
+    //         createImg.src = openorder[parseFloat(createImg.className)].img;
+    //         createImg.classList.add(createClass.toString());
+    //         imgArray.push(createImg);
+    //         mixOrder(openorder);
+    //         showOrder();
+    //         console.log(openorder);
+    //     }
 
-    });
+    // });
 
-    function showOrder(): void {
-        (document.getElementById("bestellbutton") as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
-        console.log("order");
-    }
+    // function showOrder(): void {
+    //     (document.getElementById("bestellbutton") as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
+    //     console.log("order");
+    // }
 
-    function mixOrder(array: Array<Ingrediens>): void {
-        (Math.floor(Math.random() * openorder.length));
-        console.log("random");
-    }
+    // function mixOrder(array: Array<Ingrediens>): void {
+    //     (Math.floor(Math.random() * openorder.length));
+    //     console.log("random");
+    // }
 
 
-}
+
 

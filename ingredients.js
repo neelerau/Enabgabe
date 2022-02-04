@@ -254,7 +254,7 @@ var Dönerladen;
             console.log("ende");
         }
     }
-    //Salad Resourcen leer
+    //Onion Resourcen leer
     noonion.addEventListener("click", function () {
         noonionleft();
     });
@@ -266,85 +266,88 @@ var Dönerladen;
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
         }
-        //Dough Resourcen leer
-        nodough.addEventListener("click", function () {
-            nodoughleft();
-        });
-        function nodoughleft() {
-            if (doughgesKitchen == -1) {
-                doughimg = true;
-                ingrediens.classList.add("is-hidden");
-                reloadbutton.classList.remove("is-hidden");
-                window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
-                console.log("ende");
-            }
-        }
-        //Meet Resourcen leer
-        nomeet.addEventListener("click", function () {
-            nomeetleft();
-        });
-        function nomeetleft() {
-            if (meetgesKitchen == -1) {
-                meetimg = true;
-                ingrediens.classList.add("is-hidden");
-                reloadbutton.classList.remove("is-hidden");
-                window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
-                console.log("ende");
-            }
-        }
-        //Bei Klick auf Reloudbutton, startet die Simulation neu
-        reloadbutton.addEventListener("click", function () {
-            location.reload();
-        });
     }
-    //Bestellungsausgabe
-    // const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
-    // var order: Boolean = false;
-    // var openOrder: ["Tomaten", "Zwiebeln", "Fleisch", "Salat"];
-    // customerOrder.addEventListener("click", function (): void {
-    //         mixOrder();
-    //         console.log("openorder");
-    // });
-    // function mixOrder(): void {
-    //     (Math.floor(Math.random() * openOrder.length));
-    //     console.log("random");
-    // }
-    var customerOrder = document.getElementById("bestellbutton");
-    var order = false;
-    var openorder = [
-        {
-            img: "images/Zutaten/salad.png"
-        },
-        {
-            img: "images/Zutaten/tomato.png"
-        },
-        {
-            img: "images/Zutaten/onion.png"
-        },
-        {
-            img: "images/Zutaten/meet.png"
-        }
-    ];
-    var createClass = 0;
-    var imgArray = [];
-    customerOrder.addEventListener("click", function () {
-        if (order == true) {
-            var createImg = document.createElement("img");
-            createImg.src = openorder[parseFloat(createImg.className)].img;
-            createImg.classList.add(createClass.toString());
-            imgArray.push(createImg);
-            mixOrder(openorder);
-            showOrder();
-            console.log(openorder);
-        }
+    //Dough Resourcen leer
+    nodough.addEventListener("click", function () {
+        nodoughleft();
     });
-    function showOrder() {
-        document.getElementById("bestellbutton").innerHTML = "Bestellung:" + openorder;
-        console.log("order");
+    function nodoughleft() {
+        if (doughgesKitchen == -1) {
+            doughimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
+        }
     }
-    function mixOrder(array) {
-        (Math.floor(Math.random() * openorder.length));
-        console.log("random");
+    //Meet Resourcen leer
+    nomeet.addEventListener("click", function () {
+        nomeetleft();
+    });
+    function nomeetleft() {
+        if (meetgesKitchen == -1) {
+            meetimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
+        }
     }
+    //Bei Klick auf Reloudbutton, startet die Simulation neu
+    reloadbutton.addEventListener("click", function () {
+        location.reload();
+    });
 })(Dönerladen || (Dönerladen = {}));
+//Bestellungsausgabe
+// const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
+// var order: Boolean = false;
+// var openOrder: ["Tomaten", "Zwiebeln", "Fleisch", "Salat"];
+// customerOrder.addEventListener("click", function (): void {
+//         mixOrder();
+//         console.log("openorder");
+// });
+// function mixOrder(): void {
+//     (Math.floor(Math.random() * openOrder.length));
+//     console.log("random");
+// }
+// const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
+// var order: Boolean = false;
+// interface Ingrediens {
+//     img: string;
+// }
+// var openorder: Ingrediens[] = [
+//     {
+//         img: "images/Zutaten/salad.png"
+//     },
+//     {
+//         img: "images/Zutaten/tomato.png"
+//     },
+//     {
+//         img: "images/Zutaten/onion.png"
+//     },
+//     {
+//         img: "images/Zutaten/meet.png"
+//     }
+// ];
+// var createClass: number = 0;
+// var imgArray: HTMLImageElement[] = [];
+// customerOrder.addEventListener("click", function (): void {
+//     if (order == true) {
+//         let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
+//         createImg.src = openorder[parseFloat(createImg.className)].img;
+//         createImg.classList.add(createClass.toString());
+//         imgArray.push(createImg);
+//         mixOrder(openorder);
+//         showOrder();
+//         console.log(openorder);
+//     }
+// });
+// function showOrder(): void {
+//     (document.getElementById("bestellbutton") as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
+//     console.log("order");
+// }
+// function mixOrder(array: Array<Ingrediens>): void {
+//     (Math.floor(Math.random() * openorder.length));
+//     console.log("random");
+// }
 //# sourceMappingURL=ingredients.js.map
