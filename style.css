@@ -5,6 +5,7 @@ html{
 }
 
 h1 {
+    position: relative;
     color: white;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,7 +24,7 @@ h1 {
     position: absolute;
     text-align: center;
     top: 100px;
-    left: 400px;
+    left: 410px;
     color: grey;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
@@ -40,19 +41,16 @@ h1 {
 }
 
 #newSimulation {
-    position: absolute;
+    position: relative;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: grey;
-    color: white;
-    width: 80px;
-    height: 30px;
+    text-decoration: none;
     border-radius: 10px;
+    top: -230px;
+
 }
 
 
-#Bestellung {
+#bestellbutton {
     color: black;
     background-color: rgb(209, 160, 160);
     width: 300px;

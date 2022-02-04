@@ -4,7 +4,7 @@ var Dönerladen;
     var salad = document.getElementById("buttonsalad");
     var nosalad = document.getElementById("nosalad");
     var timersalad = document.getElementById("timersalad");
-    var saladgesKitchen = 10;
+    var saladgesKitchen = 3;
     var saladges = 10;
     var saladimg = false;
     var buttonsalad = false;
@@ -49,7 +49,7 @@ var Dönerladen;
     var tomato = document.getElementById("buttontomato");
     var notomato = document.getElementById("notomato");
     var timertomato = document.getElementById("timertomato");
-    var tomatogesKitchen = 10;
+    var tomatogesKitchen = 3;
     var tomatoges = 10;
     var tomatoimg = false;
     var buttontomato = false;
@@ -94,7 +94,7 @@ var Dönerladen;
     var onion = document.getElementById("buttononion");
     var noonion = document.getElementById("noonion");
     var timeronion = document.getElementById("timeronion");
-    var oniongesKitchen = 10;
+    var oniongesKitchen = 3;
     var onionges = 10;
     var onionimg = false;
     var buttononion = false;
@@ -139,7 +139,7 @@ var Dönerladen;
     var dough = document.getElementById("buttondough");
     var nodough = document.getElementById("nodough");
     var timerdough = document.getElementById("timerdough");
-    var doughgesKitchen = 10;
+    var doughgesKitchen = 3;
     var doughges = 10;
     var doughimg = false;
     var buttondough = false;
@@ -184,7 +184,7 @@ var Dönerladen;
     var meet = document.getElementById("buttonmeet");
     var nomeet = document.getElementById("nomeet");
     var timermeet = document.getElementById("timermeet");
-    var meetgesKitchen = 10;
+    var meetgesKitchen = 3;
     var meetges = 10;
     var meetimg = false;
     var buttonmeet = false;
@@ -225,78 +225,126 @@ var Dönerladen;
             buttonmeet = true;
         }
     }
+    //Spielende und Neustart
+    var reloadbutton = document.getElementById("newSimulation");
+    var ingrediens = document.getElementById("ingrediens");
+    //Salad Resourcen leer
+    nosalad.addEventListener("click", function () {
+        nosaladleft();
+    });
+    function nosaladleft() {
+        if (saladgesKitchen == -1) {
+            saladimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
+        }
+    }
+    //Tomato Resourcen leer
+    notomato.addEventListener("click", function () {
+        notomatoleft();
+    });
+    function notomatoleft() {
+        if (tomatogesKitchen == -1) {
+            tomatoimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
+        }
+    }
+    //Salad Resourcen leer
+    noonion.addEventListener("click", function () {
+        noonionleft();
+    });
+    function noonionleft() {
+        if (oniongesKitchen == -1) {
+            onionimg = true;
+            ingrediens.classList.add("is-hidden");
+            reloadbutton.classList.remove("is-hidden");
+            window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+            console.log("ende");
+        }
+        //Dough Resourcen leer
+        nodough.addEventListener("click", function () {
+            nodoughleft();
+        });
+        function nodoughleft() {
+            if (doughgesKitchen == -1) {
+                doughimg = true;
+                ingrediens.classList.add("is-hidden");
+                reloadbutton.classList.remove("is-hidden");
+                window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+                console.log("ende");
+            }
+        }
+        //Meet Resourcen leer
+        nomeet.addEventListener("click", function () {
+            nomeetleft();
+        });
+        function nomeetleft() {
+            if (meetgesKitchen == -1) {
+                meetimg = true;
+                ingrediens.classList.add("is-hidden");
+                reloadbutton.classList.remove("is-hidden");
+                window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
+                console.log("ende");
+            }
+        }
+        //Bei Klick auf Reloudbutton, startet die Simulation neu
+        reloadbutton.addEventListener("click", function () {
+            location.reload();
+        });
+    }
     //Bestellungsausgabe
-    var customerOrder = document.querySelector(".bestellungbutton");
+    // const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
+    // var order: Boolean = false;
+    // var openOrder: ["Tomaten", "Zwiebeln", "Fleisch", "Salat"];
+    // customerOrder.addEventListener("click", function (): void {
+    //         mixOrder();
+    //         console.log("openorder");
+    // });
+    // function mixOrder(): void {
+    //     (Math.floor(Math.random() * openOrder.length));
+    //     console.log("random");
+    // }
+    var customerOrder = document.getElementById("bestellbutton");
     var order = false;
     var openorder = [
         {
-            ingredient: "Salat"
+            img: "images/Zutaten/salad.png"
         },
         {
-            ingredient: "Tomaten"
+            img: "images/Zutaten/tomato.png"
         },
         {
-            ingredient: "Zwiebeln"
+            img: "images/Zutaten/onion.png"
         },
         {
-            ingredient: "Fleisch"
+            img: "images/Zutaten/meet.png"
         }
     ];
+    var createClass = 0;
+    var imgArray = [];
     customerOrder.addEventListener("click", function () {
         if (order == true) {
-            mixOrder();
+            var createImg = document.createElement("img");
+            createImg.src = openorder[parseFloat(createImg.className)].img;
+            createImg.classList.add(createClass.toString());
+            imgArray.push(createImg);
+            mixOrder(openorder);
             showOrder();
             console.log(openorder);
         }
     });
     function showOrder() {
-        document.getElementById("Bestellung").innerHTML = "Bestellung:" + openorder;
+        document.getElementById("bestellbutton").innerHTML = "Bestellung:" + openorder;
         console.log("order");
     }
-    function mixOrder() {
+    function mixOrder(array) {
         (Math.floor(Math.random() * openorder.length));
         console.log("random");
     }
 })(Dönerladen || (Dönerladen = {}));
-//     const customerOrder: Element = (document.querySelector(".bestellungbutton")as HTMLElement); 
-//     var order: Boolean = false;
-//     interface Ingrediens {
-//         img: string;
-//     }
-//     var openorder: Ingrediens[] = [
-//          {
-//              img: "images/Zutaten/salad.png"
-//          },
-//          {
-//             img: "images/Zutaten/tomato.png"
-//         },
-//         {
-//             img: "images/Zutaten/onion.png"
-//         },
-//         {
-//             img: "images/Zutaten/meet.png"
-//         }
-//     ];
-//     var createClass: number = 0;
-//     var imgArray: HTMLImageElement[] = [];
-//     customerOrder.addEventListener("click", function(): void {
-//         if (order == true) {
-//             let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
-//             createImg.src = openorder[parseFloat(createImg.className)].img;
-//             createImg.classList.add(createClass.toString());
-//             imgArray.push(createImg);
-//             mixOrder(openorder);
-//             showOrder();  
-//             console.log(openorder);
-//         }
-//     });
-//     function showOrder(): void {
-//         (document.getElementById("Bestellung")as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
-//         console.log("order");
-//     }    
-//     function mixOrder (array: Array<Ingrediens>): void {
-//         (Math.floor(Math.random() * openorder.length));
-//         console.log("random");
-//         }
-// }
 //# sourceMappingURL=ingredients.js.map
