@@ -228,6 +228,7 @@ var Dönerladen;
     //Spielende und Neustart
     var reloadbutton = document.getElementById("newSimulation");
     var ingrediens = document.getElementById("ingrediens");
+    var hiddencanvas = document.getElementById("hiddencanvas");
     //Salad Resourcen leer
     nosalad.addEventListener("click", function () {
         nosaladleft();
@@ -236,6 +237,7 @@ var Dönerladen;
         if (saladgesKitchen == -1) {
             saladimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
@@ -249,6 +251,7 @@ var Dönerladen;
         if (tomatogesKitchen == -1) {
             tomatoimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
@@ -262,6 +265,7 @@ var Dönerladen;
         if (oniongesKitchen == -1) {
             onionimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
@@ -275,6 +279,7 @@ var Dönerladen;
         if (doughgesKitchen == -1) {
             doughimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
@@ -288,6 +293,7 @@ var Dönerladen;
         if (meetgesKitchen == -1) {
             meetimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");

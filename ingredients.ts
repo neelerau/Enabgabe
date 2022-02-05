@@ -85,6 +85,7 @@ namespace Dönerladen {
     notomato.addEventListener("click", function (): void {
         if (buttontomato == true) {
             tomatogesKitchen--;
+            
             notomato.classList.add("is-hidden");
             timertomato.classList.remove("is-hidden");
             tomatoKitchenValue();
@@ -291,6 +292,7 @@ namespace Dönerladen {
     //Spielende und Neustart
     const reloadbutton: Element = (document.getElementById("newSimulation") as HTMLInputElement);
     const ingrediens: Element = (document.getElementById("ingrediens") as HTMLInputElement);
+    const hiddencanvas: Element = (document.getElementById("hiddencanvas") as HTMLInputElement);
 
     //Salad Resourcen leer
     nosalad.addEventListener("click", function (): void {
@@ -301,6 +303,7 @@ namespace Dönerladen {
         if (saladgesKitchen == -1) {
             saladimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
 
 
@@ -319,6 +322,7 @@ namespace Dönerladen {
         if (tomatogesKitchen == -1) {
             tomatoimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
 
 
@@ -337,6 +341,7 @@ namespace Dönerladen {
         if (oniongesKitchen == -1) {
             onionimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
 
 
@@ -356,6 +361,7 @@ namespace Dönerladen {
         if (doughgesKitchen == -1) {
             doughimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
 
 
@@ -374,6 +380,7 @@ namespace Dönerladen {
         if (meetgesKitchen == -1) {
             meetimg = true;
             ingrediens.classList.add("is-hidden");
+            hiddencanvas.classList.add("noopacity");
             reloadbutton.classList.remove("is-hidden");
 
 
