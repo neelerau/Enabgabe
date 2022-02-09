@@ -4,11 +4,11 @@ html{
     background-size: cover;
 }
 
-h1 {
-    position: relative;
+#header {
     color: white;
     text-align: center;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
 }
 
 .ingrediens {
@@ -22,7 +22,7 @@ h1 {
 
 #settings {
     width: 500px;
-    height: 500px;
+    height: 610px;
     background-color:white;
     opacity: 80%;
     position: absolute;
@@ -32,7 +32,7 @@ h1 {
     color: grey;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    padding: 40px;
+    padding: 10px;
 }
 
 #startbutton {
@@ -40,7 +40,64 @@ h1 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
     font-size: 20px;
+    font-weight: bold;
+    
 }
+.img {
+    width: 50px;
+    height: 50px;
+}
+#randomingrediens {
+
+        width: 150px;
+    height: 50px;
+}
+
+#randomingredient1 {
+    width : 50px;
+    height: 50px;
+    top: 25px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    opacity: 80%;
+    cursor: pointer;
+
+}
+
+#randomingredient2 {
+    width : 50px;
+    height: 50px;
+    left: 80px;
+    top: 25px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    opacity: 80%;
+    cursor: pointer;
+
+}
+
+#randomingredient3 {
+    width : 50px;
+    height: 50px;
+    left: 160px;
+    top: 25px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    opacity: 80%;
+    cursor: pointer;
+
+}
+
+
 
 #newSimulation {
     position: relative;
@@ -53,14 +110,12 @@ h1 {
 
 #bestellbutton {
     color: black;
-    background-color: rgb(209, 160, 160);
-    width: 300px;
-    height: 50px;
-    left: 1055px;
-    top: 500px;
+    background-color: #d1a0a0;
+    width: 215px;
+    height: 80px;
+    left: 1100px;
+    top: 520px;
     position: absolute;
-    grid-template-rows: 20px 20px 20px;
-    grid-row-gap: 5px;
     z-index: 5000;
     
 }
@@ -323,4 +378,52 @@ h1 {
     top: 490px;
     position:absolute;
 
+}
+
+#buttonmeal1 {
+    width: 50px;
+    height: 50px;
+    left: 425px;
+    top: 575px;
+    position:absolute;
+
+}
+
+#buttonmeal2 {
+    width: 50px;
+    height: 50px;
+    left: 420px;
+    top: 508px;
+    position:absolute;
+
+}
+
+#buttonmeal3 {
+    width: 50px;
+    height: 50px;
+    left: 350px;
+    top: 570px;
+    position:absolute;
+
+}
+
+#buttonmeal4 {
+    width: 50px;
+    height: 40px;
+    left: 355px;
+    top: 510px;
+    position:absolute;
+
+}
+
+.meal {
+    background-color: #d1a0a0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 205px;
+    height: 20px;
+    left: 1100px;
+    top: 470px;
+    position: absolute;
+    z-index: 5000;
+    padding: 5px;
 }

@@ -4,7 +4,7 @@ var Dönerladen;
     var salad = document.getElementById("buttonsalad");
     var nosalad = document.getElementById("nosalad");
     var timersalad = document.getElementById("timersalad");
-    var saladgesKitchen = 3;
+    var saladgesKitchen = 1;
     var saladges = 10;
     var saladimg = false;
     var buttonsalad = false;
@@ -49,7 +49,7 @@ var Dönerladen;
     var tomato = document.getElementById("buttontomato");
     var notomato = document.getElementById("notomato");
     var timertomato = document.getElementById("timertomato");
-    var tomatogesKitchen = 3;
+    var tomatogesKitchen = 1;
     var tomatoges = 10;
     var tomatoimg = false;
     var buttontomato = false;
@@ -94,7 +94,7 @@ var Dönerladen;
     var onion = document.getElementById("buttononion");
     var noonion = document.getElementById("noonion");
     var timeronion = document.getElementById("timeronion");
-    var oniongesKitchen = 3;
+    var oniongesKitchen = 1;
     var onionges = 10;
     var onionimg = false;
     var buttononion = false;
@@ -135,11 +135,11 @@ var Dönerladen;
             buttononion = true;
         }
     }
-    //dough
+    //Cucumber
     var dough = document.getElementById("buttondough");
     var nodough = document.getElementById("nodough");
     var timerdough = document.getElementById("timerdough");
-    var doughgesKitchen = 3;
+    var doughgesKitchen = 1;
     var doughges = 10;
     var doughimg = false;
     var buttondough = false;
@@ -148,7 +148,7 @@ var Dönerladen;
             doughimg = true;
             dough.classList.add("is-hidden");
             nodough.classList.remove("is-hidden");
-            window.alert("Das fladenbrot muss gebacken werden!");
+            window.alert("Die Gurken müssen aufgefüllt werden!");
         }
         doughges--;
         doughValue();
@@ -184,7 +184,7 @@ var Dönerladen;
     var meet = document.getElementById("buttonmeet");
     var nomeet = document.getElementById("nomeet");
     var timermeet = document.getElementById("timermeet");
-    var meetgesKitchen = 3;
+    var meetgesKitchen = 1;
     var meetges = 10;
     var meetimg = false;
     var buttonmeet = false;
@@ -238,7 +238,6 @@ var Dönerladen;
             saladimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
         }
@@ -252,7 +251,6 @@ var Dönerladen;
             tomatoimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
         }
@@ -266,12 +264,11 @@ var Dönerladen;
             onionimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
         }
     }
-    //Dough Resourcen leer
+    //Cucumber Resourcen leer
     nodough.addEventListener("click", function () {
         nodoughleft();
     });
@@ -280,7 +277,6 @@ var Dönerladen;
             doughimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
         }
@@ -294,7 +290,6 @@ var Dönerladen;
             meetimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
             console.log("ende");
         }
@@ -303,57 +298,52 @@ var Dönerladen;
     reloadbutton.addEventListener("click", function () {
         location.reload();
     });
+    //Bestellungsausgabe
+    var order = document.getElementById("bestellbutton");
+    order.addEventListener("click", function () {
+        var images = new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
+        var index = 0;
+        var ingredient1 = document.getElementById("randomingredient1");
+        index = Math.floor(Math.random() * images.length);
+        document.getElementById("randomingredient1").src = images[index];
+        ingredient1.classList.remove("is-hidden");
+        var images2 = new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
+        var index2 = 0;
+        var ingredient2 = document.getElementById("randomingredient2");
+        index2 = Math.floor(Math.random() * images2.length);
+        document.getElementById("randomingredient2").src = images2[index2];
+        ingredient2.classList.remove("is-hidden");
+        var images3 = new Array("images/Zutaten/meal1.png", "images/Zutaten/meal2.png", "images/Zutaten/meal3.png", "images/Zutaten/meal4.png");
+        var index3 = 0;
+        var ingredient3 = document.getElementById("randomingredient3");
+        index3 = Math.floor(Math.random() * images3.length);
+        document.getElementById("randomingredient3").src = images3[index3];
+        ingredient3.classList.remove("is-hidden");
+    });
+    //Bestellunsanzahl
+    var meal1 = document.getElementById("buttonmeal1");
+    var meal2 = document.getElementById("buttonmeal2");
+    var meal3 = document.getElementById("buttonmeal3");
+    var meal4 = document.getElementById("buttonmeal4");
+    var meals = 0;
+    meal1.addEventListener("click", function () {
+        meals++;
+        mealValue();
+    });
+    meal2.addEventListener("click", function () {
+        meals++;
+        mealValue();
+    });
+    meal3.addEventListener("click", function () {
+        meals++;
+        mealValue();
+    });
+    meal4.addEventListener("click", function () {
+        meals++;
+        mealValue();
+    });
+    function mealValue() {
+        document.querySelector(".meal").innerHTML = "Bestellungen Anzahl: " + meals;
+    }
 })(Dönerladen || (Dönerladen = {}));
-//Bestellungsausgabe
-// const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
-// var order: Boolean = false;
-// var openOrder: ["Tomaten", "Zwiebeln", "Fleisch", "Salat"];
-// customerOrder.addEventListener("click", function (): void {
-//         mixOrder();
-//         console.log("openorder");
-// });
-// function mixOrder(): void {
-//     (Math.floor(Math.random() * openOrder.length));
-//     console.log("random");
-// }
-// const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
-// var order: Boolean = false;
-// interface Ingrediens {
-//     img: string;
-// }
-// var openorder: Ingrediens[] = [
-//     {
-//         img: "images/Zutaten/salad.png"
-//     },
-//     {
-//         img: "images/Zutaten/tomato.png"
-//     },
-//     {
-//         img: "images/Zutaten/onion.png"
-//     },
-//     {
-//         img: "images/Zutaten/meet.png"
-//     }
-// ];
-// var createClass: number = 0;
-// var imgArray: HTMLImageElement[] = [];
-// customerOrder.addEventListener("click", function (): void {
-//     if (order == true) {
-//         let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
-//         createImg.src = openorder[parseFloat(createImg.className)].img;
-//         createImg.classList.add(createClass.toString());
-//         imgArray.push(createImg);
-//         mixOrder(openorder);
-//         showOrder();
-//         console.log(openorder);
-//     }
-// });
-// function showOrder(): void {
-//     (document.getElementById("bestellbutton") as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
-//     console.log("order");
-// }
-// function mixOrder(array: Array<Ingrediens>): void {
-//     (Math.floor(Math.random() * openorder.length));
-//     console.log("random");
-// }
 //# sourceMappingURL=ingredients.js.map

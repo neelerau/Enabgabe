@@ -5,7 +5,7 @@ namespace Dönerladen {
     const salad: Element = (document.getElementById("buttonsalad") as HTMLInputElement);
     const nosalad: Element = (document.getElementById("nosalad") as HTMLInputElement);
     const timersalad: Element = (document.getElementById("timersalad") as HTMLInputElement);
-    var saladgesKitchen: number = 3;
+    var saladgesKitchen: number = 1;
     var saladges: number = 10;
     var saladimg: Boolean = false;
     var buttonsalad: Boolean = false;
@@ -63,7 +63,7 @@ namespace Dönerladen {
     const tomato: Element = (document.getElementById("buttontomato") as HTMLInputElement);
     const notomato: Element = (document.getElementById("notomato") as HTMLInputElement);
     const timertomato: Element = (document.getElementById("timertomato") as HTMLInputElement);
-    var tomatogesKitchen: number = 3;
+    var tomatogesKitchen: number = 1;
     var tomatoges: number = 10;
     var tomatoimg: Boolean = false;
     var buttontomato: Boolean = false;
@@ -122,7 +122,7 @@ namespace Dönerladen {
     const onion: Element = (document.getElementById("buttononion") as HTMLInputElement);
     const noonion: Element = (document.getElementById("noonion") as HTMLInputElement);
     const timeronion: Element = (document.getElementById("timeronion") as HTMLInputElement);
-    var oniongesKitchen: number = 3;
+    var oniongesKitchen: number = 1;
     var onionges: number = 10;
     var onionimg: Boolean = false;
     var buttononion: Boolean = false;
@@ -175,11 +175,11 @@ namespace Dönerladen {
         }
     }
 
-    //dough
+    //Cucumber
     const dough: Element = (document.getElementById("buttondough") as HTMLInputElement);
     const nodough: Element = (document.getElementById("nodough") as HTMLInputElement);
     const timerdough: Element = (document.getElementById("timerdough") as HTMLInputElement);
-    var doughgesKitchen: number = 3;
+    var doughgesKitchen: number = 1;
     var doughges: number = 10;
     var doughimg: Boolean = false;
     var buttondough: Boolean = false;
@@ -189,7 +189,7 @@ namespace Dönerladen {
             doughimg = true;
             dough.classList.add("is-hidden");
             nodough.classList.remove("is-hidden");
-            window.alert("Das fladenbrot muss gebacken werden!");
+            window.alert("Die Gurken müssen aufgefüllt werden!");
         }
         doughges--;
         doughValue();
@@ -235,7 +235,7 @@ namespace Dönerladen {
     const meet: Element = (document.getElementById("buttonmeet") as HTMLInputElement);
     const nomeet: Element = (document.getElementById("nomeet") as HTMLInputElement);
     const timermeet: Element = (document.getElementById("timermeet") as HTMLInputElement);
-    var meetgesKitchen: number = 3;
+    var meetgesKitchen: number = 1;
     var meetges: number = 10;
     var meetimg: Boolean = false;
     var buttonmeet: Boolean = false;
@@ -294,6 +294,7 @@ namespace Dönerladen {
     const ingrediens: Element = (document.getElementById("ingrediens") as HTMLInputElement);
     const hiddencanvas: Element = (document.getElementById("hiddencanvas") as HTMLInputElement);
 
+
     //Salad Resourcen leer
     nosalad.addEventListener("click", function (): void {
         nosaladleft();
@@ -304,7 +305,6 @@ namespace Dönerladen {
             saladimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
 
 
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
@@ -323,7 +323,6 @@ namespace Dönerladen {
             tomatoimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
 
 
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
@@ -342,7 +341,6 @@ namespace Dönerladen {
             onionimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
 
 
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
@@ -352,7 +350,7 @@ namespace Dönerladen {
     }
 
 
-    //Dough Resourcen leer
+    //Cucumber Resourcen leer
     nodough.addEventListener("click", function (): void {
             nodoughleft();
         });
@@ -362,7 +360,6 @@ namespace Dönerladen {
             doughimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
 
 
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
@@ -381,7 +378,6 @@ namespace Dönerladen {
             meetimg = true;
             ingrediens.classList.add("is-hidden");
             hiddencanvas.classList.add("noopacity");
-            reloadbutton.classList.remove("is-hidden");
 
 
             window.alert("Du hast keine Rohmaterialien mehr, die Simulation ist zu Ende!");
@@ -394,79 +390,75 @@ namespace Dönerladen {
     reloadbutton.addEventListener("click", function (): void {
             location.reload();
         });
-    }
+
 
 
     //Bestellungsausgabe
 
-    // const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
-    // var order: Boolean = false;
-    // var openOrder: ["Tomaten", "Zwiebeln", "Fleisch", "Salat"];
+    const order: Element = (document.getElementById("bestellbutton")as HTMLInputElement);
+
+    order.addEventListener("click", function(): void {
+        let images: string [] =  new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
+        let index: number = 0;
+        const ingredient1: Element = (document.getElementById("randomingredient1")as HTMLInputElement);
+        
+        index = Math.floor(Math.random() * images.length);
+        (document.getElementById("randomingredient1")as HTMLInputElement).src = images[index];
+        ingredient1.classList.remove("is-hidden");
+    
+        let images2: string [] =  new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
+        let index2: number = 0;
+        const ingredient2: Element = (document.getElementById("randomingredient2")as HTMLInputElement);
+        
+        index2 = Math.floor(Math.random() * images2.length);
+        (document.getElementById("randomingredient2")as HTMLInputElement).src = images2[index2];
+        ingredient2.classList.remove("is-hidden");
+
+        let images3: string [] =  new Array("images/Zutaten/meal1.png", "images/Zutaten/meal2.png", "images/Zutaten/meal3.png", "images/Zutaten/meal4.png");
+        let index3: number = 0;
+        const ingredient3: Element = (document.getElementById("randomingredient3")as HTMLInputElement);
+        
+        index3 = Math.floor(Math.random() * images3.length);
+        (document.getElementById("randomingredient3")as HTMLInputElement).src = images3[index3];
+        ingredient3.classList.remove("is-hidden");
+         });
+
+
+    //Bestellunsanzahl
+    const meal1: Element = (document.getElementById("buttonmeal1") as HTMLInputElement);
+    const meal2: Element = (document.getElementById("buttonmeal2") as HTMLInputElement);
+    const meal3: Element = (document.getElementById("buttonmeal3") as HTMLInputElement);
+    const meal4: Element = (document.getElementById("buttonmeal4") as HTMLInputElement);
+    var meals: number = 0;
+
+    meal1.addEventListener("click", function (): void {
+        meals++;
+        mealValue();
+
+    });
+
+    meal2.addEventListener("click", function (): void {
+        meals++;
+        mealValue();
+
+    });
+
+    meal3.addEventListener("click", function (): void {
+        meals++;
+        mealValue();
+
+    });
+
+    meal4.addEventListener("click", function (): void {
+        meals++;
+        mealValue();
+
+    });
+
+    function mealValue(): void {
+        (document.querySelector(".meal") as HTMLInputElement).innerHTML = "Bestellungen Anzahl: " + meals;
+    }
 
 
 
-    // customerOrder.addEventListener("click", function (): void {
-
-    //         mixOrder();
-    //         console.log("openorder");
-
-
-    // });
-
-
-    // function mixOrder(): void {
-    //     (Math.floor(Math.random() * openOrder.length));
-    //     console.log("random");
-    // }
-
-
-    // const customerOrder: Element = (document.getElementById("bestellbutton") as HTMLElement);
-    // var order: Boolean = false;
-
-    // interface Ingrediens {
-    //     img: string;
-    // }
-    // var openorder: Ingrediens[] = [
-    //     {
-    //         img: "images/Zutaten/salad.png"
-    //     },
-    //     {
-    //         img: "images/Zutaten/tomato.png"
-    //     },
-    //     {
-    //         img: "images/Zutaten/onion.png"
-    //     },
-    //     {
-    //         img: "images/Zutaten/meet.png"
-    //     }
-
-    // ];
-
-    // var createClass: number = 0;
-    // var imgArray: HTMLImageElement[] = [];
-    // customerOrder.addEventListener("click", function (): void {
-    //     if (order == true) {
-    //         let createImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
-    //         createImg.src = openorder[parseFloat(createImg.className)].img;
-    //         createImg.classList.add(createClass.toString());
-    //         imgArray.push(createImg);
-    //         mixOrder(openorder);
-    //         showOrder();
-    //         console.log(openorder);
-    //     }
-
-    // });
-
-    // function showOrder(): void {
-    //     (document.getElementById("bestellbutton") as HTMLInputElement).innerHTML = "Bestellung:" + openorder;
-    //     console.log("order");
-    // }
-
-    // function mixOrder(array: Array<Ingrediens>): void {
-    //     (Math.floor(Math.random() * openorder.length));
-    //     console.log("random");
-    // }
-
-
-
-
+}

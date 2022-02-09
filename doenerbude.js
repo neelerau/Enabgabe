@@ -90,6 +90,41 @@ var Dönerladen;
             Dönerladen.crc2.arc(60, 470, 40, 0, 5 * Math.PI);
             Dönerladen.crc2.fill();
             Dönerladen.crc2.closePath();
+            //meal1
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.fillStyle = "#d1a0a0";
+            Dönerladen.crc2.arc(440, 450, 30, 0, 5 * Math.PI);
+            Dönerladen.crc2.fill();
+            Dönerladen.crc2.closePath();
+            //meal2
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.fillStyle = "#d1a0a0";
+            Dönerladen.crc2.arc(370, 450, 30, 0, 5 * Math.PI);
+            Dönerladen.crc2.fill();
+            Dönerladen.crc2.closePath();
+            //meal2
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.fillStyle = "#d1a0a0";
+            Dönerladen.crc2.arc(370, 515, 30, 0, 5 * Math.PI);
+            Dönerladen.crc2.fill();
+            Dönerladen.crc2.closePath();
+            //meal4
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.fillStyle = "#d1a0a0";
+            Dönerladen.crc2.arc(440, 515, 30, 0, 5 * Math.PI);
+            Dönerladen.crc2.fill();
+            Dönerladen.crc2.closePath();
+            //Eingang
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.rect(970, 200, 30, 5);
+            Dönerladen.crc2.closePath();
+            Dönerladen.crc2.fillStyle = "grey";
+            Dönerladen.crc2.fill();
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.rect(970, 350, 30, 5);
+            Dönerladen.crc2.closePath();
+            Dönerladen.crc2.fillStyle = "grey";
+            Dönerladen.crc2.fill();
         };
         return Doenerladen;
     }()); // Close class

@@ -17,25 +17,38 @@ var Dönerladen;
 (function (Dönerladen) {
     var Customer = /** @class */ (function (_super) {
         __extends(Customer, _super);
-        function Customer(_position) {
+        function Customer(_position, _color) {
             var _this = _super.call(this, _position) || this;
-            if (_position)
-                _this.position = _position;
-            else
-                _this.position = new Dönerladen.Vector(750, 470);
-            _this.velocity = new Dönerladen.Vector(1000, 0);
-            _this.velocity = Dönerladen.Vector.random(150, 50);
+            _this.startMoving = false;
+            _this.radius = 40;
             return _this;
         }
         Customer.prototype.draw = function () {
-            var canvas = document.querySelector("#canvas");
-            var crc2 = canvas.getContext("2d");
-            crc2.save();
-            crc2.beginPath();
-            crc2.fillStyle = "#e8bea0";
-            crc2.arc(this.position.x, this.position.y, 30, 0, 5 * Math.PI);
-            crc2.fill();
-            crc2.closePath();
+            Dönerladen.crc2.save();
+            // Circle
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
+            Dönerladen.crc2.closePath();
+            Dönerladen.crc2.fillStyle = "red"; // yellow
+            Dönerladen.crc2.fill();
+        };
+        Customer.prototype.move = function () {
+            if (this.destination) {
+                var direction = new Dönerladen.Vector(this.destination.x - this.position.x, this.destination.y - this.position.y);
+                var distance = 0;
+                if (this.startMoving == true) {
+                    this.destination.x -= distance;
+                    this.destination.y -= distance;
+                    this.startMoving = false;
+                }
+                direction.scale(1 / 50);
+                if (distance < 300) {
+                    this.position.add(new Dönerladen.Vector(direction.x * 6, direction.y * 6));
+                }
+                else {
+                    this.position.add(direction);
+                }
+            }
         };
         return Customer;
     }(Dönerladen.Moveable));

@@ -1,38 +1,49 @@
 namespace Dönerladen {
 
     export class Customer extends Moveable {
-        protected position: Vector;
-        protected velocity: Vector;
+            
+           
+        public destination: Vector; 
+        public startMoving: boolean = false;
+        public radius: number = 40;
 
+        private color: string;
 
-        constructor(_position?: Vector) {
+        constructor(_position: Vector, _color: string) {
             super(_position);
 
-
-            if (_position)
-                this.position = _position;
-            else
-                this.position = new Vector(750, 470);
-
-
-            this.velocity = new Vector(1000, 0);
-            this.velocity = Vector.random(150, 50);
         }
+     
+public draw(): void {
+    crc2.save();
 
-        public draw(): void {
-            let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("#canvas");
-            let crc2: CanvasRenderingContext2D = <CanvasRenderingContext2D>canvas.getContext("2d");
-            crc2.save();
-
-            crc2.beginPath();
-            crc2.fillStyle = "#e8bea0";
-            crc2.arc(this.position.x , this.position.y , 30, 0, 5 * Math.PI );
-        
-            crc2.fill();
-            crc2.closePath();
-
-        }
-
-
-    }
+    // Circle
+    crc2.beginPath();
+    crc2.arc(this.position.x, this.position.y, this.radius , 0, 2 * Math.PI);
+    crc2.closePath();
+    crc2.fillStyle = "red"; // yellow
+    crc2.fill();
 }
+
+public move(): void {
+    
+if (this.destination) {
+
+    let direction: Vector = new Vector(this.destination.x - this.position.x, this.destination.y - this.position.y);
+    let distance: number = 0;
+
+   
+    if (this.startMoving == true) { 
+
+        this.destination.x -= distance;
+        this.destination.y -= distance;
+        this.startMoving = false;
+    }
+    direction.scale(1 / 50);
+
+    if (distance < 300) {
+        this.position.add(new Vector(direction.x * 6, direction.y * 6));
+    } else {
+        this.position.add(direction);
+    }
+}}}}
