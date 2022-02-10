@@ -7,7 +7,6 @@ namespace Dönerladen {
         public startMoving: boolean = false;
         public radius: number = 40;
 
-        private color: string;
 
         constructor(_position: Vector, _color: string) {
             super(_position);

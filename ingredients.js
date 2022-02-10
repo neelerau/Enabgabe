@@ -1,5 +1,5 @@
-var Dönerladen;
-(function (Dönerladen) {
+var Doenerladen;
+(function (Doenerladen) {
     //salad
     var salad = document.getElementById("buttonsalad");
     var nosalad = document.getElementById("nosalad");
@@ -345,5 +345,5 @@ var Dönerladen;
     function mealValue() {
         document.querySelector(".meal").innerHTML = "Bestellungen Anzahl: " + meals;
     }
-})(Dönerladen || (Dönerladen = {}));
+})(Doenerladen || (Doenerladen = {}));
 //# sourceMappingURL=ingredients.js.map
