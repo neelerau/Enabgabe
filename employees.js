@@ -20,7 +20,7 @@ var Dönerladen;
         function Employees(_position, _color) {
             var _this = _super.call(this, _position) || this;
             _this.startMoving = false;
-            _this.radius = 30;
+            _this.radius = 40;
             _this.color = _color;
             return _this;
         }

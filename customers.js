@@ -15,43 +15,52 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Dönerladen;
 (function (Dönerladen) {
+    var STATE;
+    (function (STATE) {
+        STATE[STATE["COMING"] = 0] = "COMING";
+        STATE[STATE["WAITING"] = 1] = "WAITING";
+        STATE[STATE["LEAVING"] = 2] = "LEAVING";
+    })(STATE || (STATE = {}));
     var Customer = /** @class */ (function (_super) {
         __extends(Customer, _super);
-        function Customer(_position, _color) {
+        function Customer(_position) {
             var _this = _super.call(this, _position) || this;
-            _this.startMoving = false;
-            _this.radius = 40;
+            _this.moods = ["pissed", "angry", "fine"];
+            _this.velocity.set(150, 0);
+            _this.mood = _this.moods[3];
+            _this.state = STATE.COMING;
             return _this;
         }
-        Customer.prototype.draw = function () {
-            Dönerladen.crc2.save();
-            // Circle
-            Dönerladen.crc2.beginPath();
-            Dönerladen.crc2.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
-            Dönerladen.crc2.closePath();
-            Dönerladen.crc2.fillStyle = "red"; // yellow
-            Dönerladen.crc2.fill();
-        };
-        Customer.prototype.move = function () {
-            if (this.destination) {
-                var direction = new Dönerladen.Vector(this.destination.x - this.position.x, this.destination.y - this.position.y);
-                var distance = 0;
-                if (this.startMoving == true) {
-                    this.destination.x -= distance;
-                    this.destination.y -= distance;
-                    this.startMoving = false;
-                }
-                direction.scale(1 / 50);
-                if (distance < 300) {
-                    this.position.add(new Dönerladen.Vector(direction.x * 6, direction.y * 6));
-                }
-                else {
-                    this.position.add(direction);
-                }
+        Customer.prototype.move = function (_timeslice) {
+            _super.prototype.move.call(this, _timeslice);
+            switch (this.state) {
+                case STATE.COMING:
+                    var nextInLine = test[test.indexOf(this) - 1];
+                    if (this.position.x >= Dönerladen.middleX - 150) {
+                        this.velocity.set(0, 0);
+                        this.state = STATE.WAITING;
+                        break;
+                    }
+                    else if (nextInLine) {
+                        if ((this.velocity.length * _timeslice) + 150 > new Dönerladen.Vector(nextInLine.position.x + this.position.x, nextInLine.position.y + this.position.y).length) {
+                            this.velocity.set(1500, 0);
+                        }
+                        else {
+                            this.velocity.set(150, 0);
+                        }
+                    }
+                    break;
+                case STATE.LEAVING:
+                    if (this.position.y > Dönerladen.crc2.canvas.height + 50)
+                        Dönerladen.removeCustomer(this);
             }
         };
+        Customer.prototype.receiveFood = function () {
+            this.velocity.set(0, 150);
+            this.state = STATE.LEAVING;
+        };
         return Customer;
-    }(Dönerladen.Moveable));
+    }(Dönerladen.Human));
     Dönerladen.Customer = Customer;
 })(Dönerladen || (Dönerladen = {}));
 //# sourceMappingURL=customers.js.map

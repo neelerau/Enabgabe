@@ -1,5 +1,7 @@
 
 html{
+    width: 1500px;
+    height: 500px;
     background: url("images/background.jpg") no-repeat;
     background-size: cover;
 }
@@ -28,7 +30,7 @@ html{
     position: absolute;
     text-align: center;
     top: 100px;
-    left: 410px;
+    left: 470px;
     color: grey;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
@@ -104,7 +106,7 @@ html{
     text-align: center;
     text-decoration: none;
     border-radius: 10px;
-    top: -300px;
+    top: 50px;
 }
 
 

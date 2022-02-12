@@ -3,10 +3,18 @@ namespace Dönerladen {
     export class Vector {
         public x: number;
         public y: number;
-        
 
-        constructor(_x: number, _y: number) {
-            this.x = _x, 
+        public constructor(_x: number, _y: number) {
+            this.set(_x, _y);
+        }
+
+        public get length(): number {
+            let length: number = Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+            return (length);
+        }
+
+        public set(_x: number, _y: number): void {
+            this.x = _x;
             this.y = _y;
         }
 
@@ -20,5 +28,10 @@ namespace Dönerladen {
             this.y += _addend.y;
         }
 
+        public copy(): Vector {
+            let copy: Vector = new Vector(this.x, this.y);
+            return (copy);
+        }
     }
+
 }
