@@ -50,7 +50,7 @@ var Dönerladen;
                 if (this.startMoving == true) {
                     this.destination.x -= distance;
                     this.destination.y -= distance;
-                    this.velocity.set(150, 0);
+                    this.velocity.set(-150, 0);
                     this.startMoving = false;
                 }
                 direction.scale(1 / 50);
@@ -61,7 +61,7 @@ var Dönerladen;
                     this.position.add(direction);
                 }
                 setTimeout(function () {
-                    _this.velocity.set(150, 0);
+                    _this.velocity.set(-150, 0);
                 }, 3500);
             }
         };

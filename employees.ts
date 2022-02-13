@@ -51,7 +51,7 @@ namespace Dönerladen {
 
                     this.destination.x -= distance;
                     this.destination.y -= distance;
-                    this.velocity.set(150, 0);
+                    this.velocity.set(-150, 0);
                     this.startMoving = false;
                 }
                 direction.scale(1 / 50);
@@ -62,7 +62,7 @@ namespace Dönerladen {
                     this.position.add(direction);
                 }
                 setTimeout(() => {
-                    this.velocity.set(150, 0);
+                    this.velocity.set(-150, 0);
                 },         3500);
             }
         }
