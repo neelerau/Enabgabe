@@ -12,7 +12,6 @@ var Dönerladen;
             Dönerladen.crc2.closePath();
             //Anzeigefeld
             Dönerladen.crc2.fillStyle = "white";
-            Dönerladen.crc2.strokeStyle = "black";
             Dönerladen.crc2.fillRect(1000, 0, 400, 550);
             Dönerladen.crc2.closePath();
             //Theke
@@ -127,7 +126,7 @@ var Dönerladen;
             Dönerladen.crc2.fill();
         };
         return Doenerladen;
-    }()); // Close class
+    }());
     Dönerladen.Doenerladen = Doenerladen;
-})(Dönerladen || (Dönerladen = {})); // Close namespace
+})(Dönerladen || (Dönerladen = {}));
 //# sourceMappingURL=doenerbude.js.map

@@ -2,29 +2,42 @@ namespace Dönerladen {
 
     export class Employees extends Moveable {
 
-
         public destination: Vector;
         public startMoving: boolean = false;
-        public radius: number = 40;
+        public radius: number = 30;
+        public x: number;
+        public y: number;
 
+        public strokecolor: string;
         private color: string;
 
-        constructor(_position: Vector, _color: string) {
+        constructor(_position: Vector, _color: string, _colors: string) {
             super(_position);
             this.color = _color;
+            this.velocity.set(150, 0);
+            this.strokecolor = _colors;
 
         }
 
         public draw(): void {
             crc2.save();
 
-            // Circle
+            // Emloyee
             crc2.beginPath();
             crc2.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
             crc2.closePath();
-            crc2.fillStyle = this.color; // yellow
+            crc2.stroke();
+            crc2.lineWidth = 10;
+            crc2.strokeStyle = this.strokecolor;
+            crc2.fillStyle = this.color;
             crc2.fill();
+
+            setTimeout(() => {
+                this.strokecolor = "red";
+            },         2000);
+
         }
+
 
         public move(): void {
 
@@ -38,6 +51,7 @@ namespace Dönerladen {
 
                     this.destination.x -= distance;
                     this.destination.y -= distance;
+                    this.velocity.set(150, 0);
                     this.startMoving = false;
                 }
                 direction.scale(1 / 50);
@@ -47,6 +61,9 @@ namespace Dönerladen {
                 } else {
                     this.position.add(direction);
                 }
+                setTimeout(() => {
+                    this.velocity.set(150, 0);
+                },         3500);
             }
         }
     }

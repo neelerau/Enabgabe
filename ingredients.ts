@@ -386,7 +386,7 @@ namespace Doenerladen {
         }
     }
 
-        //Bei Klick auf Reloudbutton, startet die Simulation neu
+    //Bei Klick auf Reloudbutton, startet die Simulation neu
     reloadbutton.addEventListener("click", function (): void {
             location.reload();
         });
@@ -456,7 +456,7 @@ namespace Doenerladen {
     });
 
     function mealValue(): void {
-        (document.querySelector(".meal") as HTMLInputElement).innerHTML = "Bestellungen Anzahl: " + meals;
+        (document.querySelector(".meal") as HTMLInputElement).innerHTML = "Order Value: " + meals;
     }
 
 

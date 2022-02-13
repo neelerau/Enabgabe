@@ -429,3 +429,15 @@ html{
     z-index: 5000;
     padding: 5px;
 }
+
+#nextCustomer {
+        color: black;
+        background-color: #d1a0a0;
+        width: 215px;
+        height: 30px;
+        left: 1100px;
+        top: 600px;
+        position: absolute;
+        z-index: 5000;
+        
+}

@@ -17,29 +17,40 @@ var Dönerladen;
 (function (Dönerladen) {
     var Employees = /** @class */ (function (_super) {
         __extends(Employees, _super);
-        function Employees(_position, _color) {
+        function Employees(_position, _color, _colors) {
             var _this = _super.call(this, _position) || this;
             _this.startMoving = false;
-            _this.radius = 40;
+            _this.radius = 30;
             _this.color = _color;
+            _this.velocity.set(150, 0);
+            _this.strokecolor = _colors;
             return _this;
         }
         Employees.prototype.draw = function () {
+            var _this = this;
             Dönerladen.crc2.save();
-            // Circle
+            // Emloyee
             Dönerladen.crc2.beginPath();
             Dönerladen.crc2.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
             Dönerladen.crc2.closePath();
-            Dönerladen.crc2.fillStyle = this.color; // yellow
+            Dönerladen.crc2.stroke();
+            Dönerladen.crc2.lineWidth = 10;
+            Dönerladen.crc2.strokeStyle = this.strokecolor;
+            Dönerladen.crc2.fillStyle = this.color;
             Dönerladen.crc2.fill();
+            setTimeout(function () {
+                _this.strokecolor = "red";
+            }, 2000);
         };
         Employees.prototype.move = function () {
+            var _this = this;
             if (this.destination) {
                 var direction = new Dönerladen.Vector(this.destination.x - this.position.x, this.destination.y - this.position.y);
                 var distance = 0;
                 if (this.startMoving == true) {
                     this.destination.x -= distance;
                     this.destination.y -= distance;
+                    this.velocity.set(150, 0);
                     this.startMoving = false;
                 }
                 direction.scale(1 / 50);
@@ -49,6 +60,9 @@ var Dönerladen;
                 else {
                     this.position.add(direction);
                 }
+                setTimeout(function () {
+                    _this.velocity.set(150, 0);
+                }, 3500);
             }
         };
         return Employees;

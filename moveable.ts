@@ -1,5 +1,6 @@
 namespace Dönerladen {
 
+
     export abstract class Moveable {
             public position: Vector;
             protected velocity: Vector;

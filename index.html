@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="vector.js" defer></script>
     <script src="moveable.js" defer></script>
-    <script src="employees.js" defer></script>
-    <script src="customerclass.js" defer></script>
     <script src="ingredients.js" defer></script>
     <script src="doenerbude.js" defer></script>
+    <script src="employees.js" defer></script>
     <script src="customers.js" defer></script>
     <script src="main.js" defer></script>
     <title>Dönderbude</title>
@@ -22,7 +21,7 @@
    <div id="header"><h1>Döner-Simulator</h1></div>
 
 
-        <canvas id="hiddencanvas" id="canvas" width="1500" height="550"></canvas>
+        <canvas id="hiddencanvas" id="canvas" width="1400" height="550"></canvas>
 
             <div id="settings">
 
@@ -71,7 +70,7 @@
                         <legend> <b>Farben</b> </legend>
         
                         <label for="mitarbeiter">Mitarbeiter</label>
-                        <input type="color" id="mitarbeiterFarbe" name="memberColorPicker"  value="#66b2ff">
+                        <input type="color" id="mitarbeiterFarbe" name="employeeColorPicker"  value="#66b2ff">
                         <br>
                         <label for="teamBcolour">Kunden </label>
                         <input type="color" id="kundenFarbe" name="customerColorPicker"  value="#ff3333">
@@ -122,7 +121,7 @@
             <img id="timermeet" class="is-hidden" src="images/Zutaten/timermeet.png">
 
 
-            <div class="meal">Bestellungen Anzahl:</div> 
+            <div class="meal">Order Value:</div> 
             <img id="buttonmeal1" src="images/Zutaten/meal1.png"> </img>
             <img id="buttonmeal2" src="images/Zutaten/meal2.png"> </img>
             <img id="buttonmeal3" src="images/Zutaten/meal3.png"> </img>
@@ -131,11 +130,13 @@
             
 
             <div id="bestellbutton">
-                <button>Bestellung</button>
+                <button>New Order</button>
                 <img src="images/Zutaten/salad.png" class="is-hidden" id="randomingredient1" alt="Random ingredients">
                 <img src="images/Zutaten/tomato.png" class="is-hidden" id="randomingredient2" alt="Random ingrediens">
                 <img src="images/Zutaten/onion.png" class="is-hidden" id="randomingredient3" alt="Random ingrediens">
              </div>
+
+             <div id="nextCustomer"><button>Finished Order</button></div>
 
         </div>
 

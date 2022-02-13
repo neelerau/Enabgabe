@@ -13,7 +13,6 @@ namespace Dönerladen {
 
             //Anzeigefeld
             crc2.fillStyle = "white";
-            crc2.strokeStyle = "black";
             crc2.fillRect(1000, 0, 400, 550);
             crc2.closePath();
 
@@ -142,5 +141,5 @@ namespace Dönerladen {
 
 
         }
-    } // Close class
-} // Close namespace
+    } 
+} 

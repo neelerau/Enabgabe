@@ -343,7 +343,7 @@ var Doenerladen;
         mealValue();
     });
     function mealValue() {
-        document.querySelector(".meal").innerHTML = "Bestellungen Anzahl: " + meals;
+        document.querySelector(".meal").innerHTML = "Order Value: " + meals;
     }
 })(Doenerladen || (Doenerladen = {}));
 //# sourceMappingURL=ingredients.js.map
