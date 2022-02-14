@@ -136,13 +136,13 @@ namespace Dönerladen {
 
             //Eingang
             crc2.beginPath();
-            crc2.rect(970, 200, 30, 5);
+            crc2.rect(970, 220, 30, 5);
             crc2.closePath();
             crc2.fillStyle = "grey";
             crc2.fill();
 
             crc2.beginPath();
-            crc2.rect(970, 350, 30, 5);
+            crc2.rect(970, 370, 30, 5);
             crc2.closePath();
             crc2.fillStyle = "grey";
             crc2.fill();

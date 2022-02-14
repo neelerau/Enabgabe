@@ -122,12 +122,12 @@ var Dönerladen;
             Dönerladen.crc2.closePath();
             //Eingang
             Dönerladen.crc2.beginPath();
-            Dönerladen.crc2.rect(970, 200, 30, 5);
+            Dönerladen.crc2.rect(970, 220, 30, 5);
             Dönerladen.crc2.closePath();
             Dönerladen.crc2.fillStyle = "grey";
             Dönerladen.crc2.fill();
             Dönerladen.crc2.beginPath();
-            Dönerladen.crc2.rect(970, 350, 30, 5);
+            Dönerladen.crc2.rect(970, 370, 30, 5);
             Dönerladen.crc2.closePath();
             Dönerladen.crc2.fillStyle = "grey";
             Dönerladen.crc2.fill();
