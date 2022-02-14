@@ -58,7 +58,7 @@ namespace Dönerladen {
 
             setTimeout(() => {
                 this.strokecolor2 = "red";
-            },         15000);
+            },         10000);
 
         }
 
@@ -85,7 +85,7 @@ namespace Dönerladen {
                     }
                     break;
                 case STATE.FINISH:
-                    if (this.position.y > crc2.canvas.height + 0)
+                    if (this.position.y > crc2.canvas.height - 0)
                         removeCustomer(this);
             }
         }

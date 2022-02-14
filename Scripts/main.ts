@@ -16,8 +16,6 @@ namespace Dönerladen {
     export let employee2: Employees;
 
     export let customerIn: Customer[] = [];
-    export let middleX: number;
-    export let middleY: number;
 
     let customerSpawnPoint: Vector;
     let lastFrame: number;
@@ -103,14 +101,11 @@ namespace Dönerladen {
             animationUpdate();
         },                 20);
 
-
-        middleX = crc2.canvas.width;
-        middleY = crc2.canvas.height / 2;
-        customerSpawnPoint = new Vector(1000, middleY);
+        customerSpawnPoint = new Vector(1000, 300);
         lastFrame = performance.now();
         update();
         newCustomer();
-        window.setInterval(newCustomer, 3900);
+        window.setInterval(newCustomer, 5000);
     }
 
 
@@ -203,7 +198,7 @@ namespace Dönerladen {
     const nextCustomer: Element = (document.getElementById("nextCustomer") as HTMLInputElement);
 
     function newCustomer(): void {
-        if (customerIn.length < 20) {
+        if (customerIn.length < 5) {
             customerIn.push(new Customer(new Vector(customerSpawnPoint.x, customerSpawnPoint.y), customerColor, customerMood));
             console.log("hi");
         }

@@ -63,7 +63,7 @@ var Dönerladen;
             Dönerladen.crc2.fill();
             setTimeout(function () {
                 _this.strokecolor2 = "red";
-            }, 15000);
+            }, 10000);
         };
         Customer.prototype.move = function (_timeslice) {
             _super.prototype.move.call(this, _timeslice);
@@ -85,7 +85,7 @@ var Dönerladen;
                     }
                     break;
                 case STATE.FINISH:
-                    if (this.position.y > Dönerladen.crc2.canvas.height + 0)
+                    if (this.position.y > Dönerladen.crc2.canvas.height - 0)
                         Dönerladen.removeCustomer(this);
             }
         };

@@ -67,13 +67,11 @@ var Dönerladen;
         window.setInterval(function () {
             animationUpdate();
         }, 20);
-        Dönerladen.middleX = Dönerladen.crc2.canvas.width;
-        Dönerladen.middleY = Dönerladen.crc2.canvas.height / 2;
-        customerSpawnPoint = new Dönerladen.Vector(1000, Dönerladen.middleY);
+        customerSpawnPoint = new Dönerladen.Vector(1000, 300);
         lastFrame = performance.now();
         update();
         newCustomer();
-        window.setInterval(newCustomer, 3900);
+        window.setInterval(newCustomer, 5000);
     }
     //Employees moving with keyevent + mouseclick
     function drawUpdate() {
@@ -146,7 +144,7 @@ var Dönerladen;
     //Kunden kommen, warten und gehen
     var nextCustomer = document.getElementById("nextCustomer");
     function newCustomer() {
-        if (Dönerladen.customerIn.length < 20) {
+        if (Dönerladen.customerIn.length < 5) {
             Dönerladen.customerIn.push(new Dönerladen.Customer(new Dönerladen.Vector(customerSpawnPoint.x, customerSpawnPoint.y), customerColor, customerMood));
             console.log("hi");
         }

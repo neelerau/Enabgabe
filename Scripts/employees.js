@@ -53,7 +53,7 @@ var Dönerladen;
             Dönerladen.crc2.fill();
             setTimeout(function () {
                 _this.strokecolor = "red";
-            }, 250000);
+            }, 100000);
         };
         Employees.prototype.move = function () {
             var _this = this;

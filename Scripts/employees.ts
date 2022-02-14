@@ -50,7 +50,7 @@ namespace Dönerladen {
 
             setTimeout(() => {
                 this.strokecolor = "red";
-            },         250000);
+            },         100000);
 
         }
 
