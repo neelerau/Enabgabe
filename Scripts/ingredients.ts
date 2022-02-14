@@ -1,3 +1,12 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
+
+
 namespace Doenerladen {
 
 
@@ -85,7 +94,7 @@ namespace Doenerladen {
     notomato.addEventListener("click", function (): void {
         if (buttontomato == true) {
             tomatogesKitchen--;
-            
+
             notomato.classList.add("is-hidden");
             timertomato.classList.remove("is-hidden");
             tomatoKitchenValue();
@@ -352,8 +361,8 @@ namespace Doenerladen {
 
     //Cucumber Resourcen leer
     nodough.addEventListener("click", function (): void {
-            nodoughleft();
-        });
+        nodoughleft();
+    });
 
     function nodoughleft(): void {
         if (doughgesKitchen == -1) {
@@ -370,8 +379,8 @@ namespace Doenerladen {
 
     //Meet Resourcen leer
     nomeet.addEventListener("click", function (): void {
-            nomeetleft();
-        });
+        nomeetleft();
+    });
 
     function nomeetleft(): void {
         if (meetgesKitchen == -1) {
@@ -388,40 +397,40 @@ namespace Doenerladen {
 
     //Bei Klick auf Reloudbutton, startet die Simulation neu
     reloadbutton.addEventListener("click", function (): void {
-            location.reload();
-        });
+        location.reload();
+    });
 
 
 
     //Bestellungsausgabe
 
-    const order: Element = (document.getElementById("bestellbutton")as HTMLInputElement);
+    const order: Element = (document.getElementById("bestellbutton") as HTMLInputElement);
 
-    order.addEventListener("click", function(): void {
-        let images: string [] =  new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
+    order.addEventListener("click", function (): void {
+        let images: string[] = new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
         let index: number = 0;
-        const ingredient1: Element = (document.getElementById("randomingredient1")as HTMLInputElement);
-        
+        const ingredient1: Element = (document.getElementById("randomingredient1") as HTMLInputElement);
+
         index = Math.floor(Math.random() * images.length);
-        (document.getElementById("randomingredient1")as HTMLInputElement).src = images[index];
+        (document.getElementById("randomingredient1") as HTMLInputElement).src = images[index];
         ingredient1.classList.remove("is-hidden");
-    
-        let images2: string [] =  new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
+
+        let images2: string[] = new Array("images/Zutaten/salad.png", "images/Zutaten/tomato.png", "images/Zutaten/onion.png", "images/Zutaten/meet.png", "images/Zutaten/dough.png");
         let index2: number = 0;
-        const ingredient2: Element = (document.getElementById("randomingredient2")as HTMLInputElement);
-        
+        const ingredient2: Element = (document.getElementById("randomingredient2") as HTMLInputElement);
+
         index2 = Math.floor(Math.random() * images2.length);
-        (document.getElementById("randomingredient2")as HTMLInputElement).src = images2[index2];
+        (document.getElementById("randomingredient2") as HTMLInputElement).src = images2[index2];
         ingredient2.classList.remove("is-hidden");
 
-        let images3: string [] =  new Array("images/Zutaten/meal1.png", "images/Zutaten/meal2.png", "images/Zutaten/meal3.png", "images/Zutaten/meal4.png");
+        let images3: string[] = new Array("images/Zutaten/meal1.png", "images/Zutaten/meal2.png", "images/Zutaten/meal3.png", "images/Zutaten/meal4.png");
         let index3: number = 0;
-        const ingredient3: Element = (document.getElementById("randomingredient3")as HTMLInputElement);
-        
+        const ingredient3: Element = (document.getElementById("randomingredient3") as HTMLInputElement);
+
         index3 = Math.floor(Math.random() * images3.length);
-        (document.getElementById("randomingredient3")as HTMLInputElement).src = images3[index3];
+        (document.getElementById("randomingredient3") as HTMLInputElement).src = images3[index3];
         ingredient3.classList.remove("is-hidden");
-         });
+    });
 
 
     //Bestellunsanzahl

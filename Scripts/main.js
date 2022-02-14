@@ -1,3 +1,10 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
 var Dönerladen;
 (function (Dönerladen) {
     Dönerladen.customerIn = [];
@@ -8,13 +15,34 @@ var Dönerladen;
     var customerColor = "#ff3333";
     var employeeMood = "green";
     var customerMood = "green";
+    var instructionButton;
+    var instructionBoard;
+    //Handleload on window
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         var canvas = document.querySelector("canvas");
         if (!canvas)
             return;
         Dönerladen.crc2 = canvas.getContext("2d");
+        instructionButton = document.getElementById("instructionButton");
+        instructionBoard = document.getElementById("instructionBoard");
+        instructionButton.addEventListener("click", showInstruction);
         canvas.addEventListener("click", handleCanvasClick);
+    }
+    //Instruction Board
+    var hiddencanvas = document.getElementById("hiddencanvas");
+    function showInstruction() {
+        console.log("HI");
+        if (instructionBoard.classList.contains("is-hidden")) {
+            instructionBoard.classList.remove("is-hidden");
+            instructionBoard.classList.add("visible");
+            hiddencanvas.classList.add("noopacity");
+        }
+        else if (instructionBoard.classList.contains("visible")) {
+            instructionBoard.classList.remove("visible");
+            instructionBoard.classList.add("is-hidden");
+            hiddencanvas.classList.remove("noopacity");
+        }
     }
     //start Simulation
     var ingrediens = document.getElementById("ingrediens");
@@ -33,6 +61,7 @@ var Dönerladen;
         reloadbutton.classList.remove("is-hidden");
         getUserPreferences();
         moodEmployees();
+        moodCustomer();
         createEmployee();
         window.setInterval(drawUpdate, 20);
         window.setInterval(function () {
@@ -114,29 +143,32 @@ var Dönerladen;
             moveable.move(200);
         }
     }
-    //Kunden 
+    //Kunden kommen, warten und gehen
     var nextCustomer = document.getElementById("nextCustomer");
     function newCustomer() {
-        if (Dönerladen.customerIn.length < 5) {
-            Dönerladen.customerIn.push(new Dönerladen.Customer(new Dönerladen.Vector(customerSpawnPoint.x, customerSpawnPoint.y), customerColor));
+        if (Dönerladen.customerIn.length < 20) {
+            Dönerladen.customerIn.push(new Dönerladen.Customer(new Dönerladen.Vector(customerSpawnPoint.x, customerSpawnPoint.y), customerColor, customerMood));
             console.log("hi");
         }
     }
     nextCustomer.addEventListener("click", function () {
         customerLeave();
     });
+    function moodCustomer() {
+        customerMood = "green";
+    }
     function customerLeave() {
-        Dönerladen.customerIn[0].receiveFood();
+        Dönerladen.customerIn[0].finishedOrder();
         console.log("weg");
     }
     function update() {
         var frameTime = performance.now() - lastFrame;
         lastFrame = performance.now();
         for (var _i = 0, customerIn_1 = Dönerladen.customerIn; _i < customerIn_1.length; _i++) {
-            var person = customerIn_1[_i];
+            var customer = customerIn_1[_i];
             //Geschwindigkeit Kunde
-            person.move(frameTime / 1000);
-            person.draw();
+            customer.move(frameTime / 1000);
+            customer.draw();
         }
         window.requestAnimationFrame(update);
     }

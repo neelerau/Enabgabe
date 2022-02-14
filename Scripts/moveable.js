@@ -1,3 +1,10 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
 var Dönerladen;
 (function (Dönerladen) {
     var Moveable = /** @class */ (function () {

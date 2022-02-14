@@ -1,3 +1,11 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
+
 namespace Dönerladen {
 
 
@@ -22,6 +30,11 @@ namespace Dönerladen {
     let customerMood: string = "green";
 
 
+    let instructionButton: HTMLSpanElement;
+    let instructionBoard: Element;
+
+
+    //Handleload on window
 
     window.addEventListener("load", handleLoad);
 
@@ -33,14 +46,36 @@ namespace Dönerladen {
             return;
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
+        instructionButton = <HTMLDivElement>document.getElementById("instructionButton");
+        instructionBoard = <HTMLSpanElement>document.getElementById("instructionBoard");
 
+        instructionButton.addEventListener("click", showInstruction);
 
         canvas.addEventListener("click", handleCanvasClick);
 
     }
 
 
+    //Instruction Board
+
+    const hiddencanvas: Element = (document.getElementById("hiddencanvas") as HTMLInputElement);
+
+    function showInstruction(): void {
+        console.log("HI");
+        if (instructionBoard.classList.contains("is-hidden")) {
+            instructionBoard.classList.remove("is-hidden");
+            instructionBoard.classList.add("visible");
+            hiddencanvas.classList.add("noopacity");
+        } else if (instructionBoard.classList.contains("visible")) {
+            instructionBoard.classList.remove("visible");
+            instructionBoard.classList.add("is-hidden");
+            hiddencanvas.classList.remove("noopacity");
+        }
+    }
+
+
     //start Simulation
+
     const ingrediens: Element = (document.getElementById("ingrediens") as HTMLInputElement);
     const landingPage: Element = (document.getElementById("settings") as HTMLInputElement);
     const startbutton: Element = (document.getElementById("startbutton") as HTMLInputElement);
@@ -61,6 +96,7 @@ namespace Dönerladen {
 
         getUserPreferences();
         moodEmployees();
+        moodCustomer();
         createEmployee();
         window.setInterval(drawUpdate, 20);
         window.setInterval(function (): void {
@@ -96,7 +132,7 @@ namespace Dönerladen {
     function moodEmployees(): void {
         employeeMood = "green";
         console.log("color");
- } 
+    }
 
     function createEmployee(): void {
 
@@ -106,7 +142,6 @@ namespace Dönerladen {
         moveables.push(employee2);
 
     }
-
 
     function handleCanvasClick(_event: MouseEvent): void {
         if (_event.shiftKey || _event.altKey) {
@@ -163,42 +198,46 @@ namespace Dönerladen {
 
 
 
-    //Kunden 
+    //Kunden kommen, warten und gehen
+
     const nextCustomer: Element = (document.getElementById("nextCustomer") as HTMLInputElement);
 
     function newCustomer(): void {
-        if (customerIn.length < 5) {
-            customerIn.push(new Customer(new Vector(customerSpawnPoint.x, customerSpawnPoint.y), customerColor));
+        if (customerIn.length < 20) {
+            customerIn.push(new Customer(new Vector(customerSpawnPoint.x, customerSpawnPoint.y), customerColor, customerMood));
             console.log("hi");
         }
     }
 
-    nextCustomer.addEventListener("click", function(): void {
-    customerLeave();
+    nextCustomer.addEventListener("click", function (): void {
+        customerLeave();
 
-});
+    });
+
+    function moodCustomer(): void {
+        customerMood = "green";
+    }
 
 
     function customerLeave(): void {
-        customerIn[0].receiveFood();
+        customerIn[0].finishedOrder();
         console.log("weg");
     }
 
     function update(): void {
         let frameTime: number = performance.now() - lastFrame;
         lastFrame = performance.now();
-        for (let person of customerIn) {
+        for (let customer of customerIn) {
             //Geschwindigkeit Kunde
-            person.move(frameTime / 1000);
-            person.draw();
+            customer.move(frameTime / 1000);
+            customer.draw();
         }
         window.requestAnimationFrame(update);
     }
+
     export function removeCustomer(_customer: Customer): void {
         customerIn.splice(customerIn.indexOf(_customer), 1);
- 
+
     }
-
-
 
 }

@@ -1,3 +1,10 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,6 +20,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//Inspiration für die Kunden von Amlie Dell'Oro
 var Dönerladen;
 (function (Dönerladen) {
     var STATE;
@@ -23,23 +31,39 @@ var Dönerladen;
     })(STATE || (STATE = {}));
     var Customer = /** @class */ (function (_super) {
         __extends(Customer, _super);
-        function Customer(_position, _color) {
+        function Customer(_position, _color, _color2) {
             var _this = _super.call(this, _position) || this;
             _this.velocity.set(-150, 0);
             _this.state = STATE.COMING;
             _this.color = _color;
-            Dönerladen.middleX = Dönerladen.crc2.canvas.width;
-            Dönerladen.middleY = Dönerladen.crc2.canvas.height / 2;
+            _this.strokecolor2 = _color2;
             return _this;
         }
         Customer.prototype.draw = function () {
+            var _this = this;
+            Dönerladen.crc2.save();
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.translate(this.position.x, this.position.y);
+            Dönerladen.crc2.arc(0, 0, 30, 0, 360);
+            Dönerladen.crc2.fillStyle = this.strokecolor2;
+            Dönerladen.crc2.fill();
+            Dönerladen.crc2.restore();
             Dönerladen.crc2.save();
             Dönerladen.crc2.fillStyle = this.color;
             Dönerladen.crc2.translate(this.position.x, this.position.y);
             Dönerladen.crc2.beginPath();
-            Dönerladen.crc2.arc(0, 0, 30, 0, 360);
+            Dönerladen.crc2.arc(0, 0, 25, 0, 360);
             Dönerladen.crc2.fill();
             Dönerladen.crc2.restore();
+            //Average Mood
+            Dönerladen.crc2.beginPath();
+            Dönerladen.crc2.rect(1100, 200, 180, 10);
+            Dönerladen.crc2.closePath();
+            Dönerladen.crc2.fillStyle = this.strokecolor2;
+            Dönerladen.crc2.fill();
+            setTimeout(function () {
+                _this.strokecolor2 = "red";
+            }, 15000);
         };
         Customer.prototype.move = function (_timeslice) {
             _super.prototype.move.call(this, _timeslice);
@@ -65,7 +89,7 @@ var Dönerladen;
                         Dönerladen.removeCustomer(this);
             }
         };
-        Customer.prototype.receiveFood = function () {
+        Customer.prototype.finishedOrder = function () {
             this.velocity.set(0, 150);
             this.state = STATE.FINISH;
         };

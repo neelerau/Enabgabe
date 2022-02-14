@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="vector.js" defer></script>
-    <script src="moveable.js" defer></script>
-    <script src="ingredients.js" defer></script>
-    <script src="doenerbude.js" defer></script>
-    <script src="employees.js" defer></script>
-    <script src="customers.js" defer></script>
-    <script src="main.js" defer></script>
+    <script src="Scripts/vector.js" defer></script>
+    <script src="Scripts/moveable.js" defer></script>
+    <script src="Scripts/ingredients.js" defer></script>
+    <script src="Scripts/doenerbude.js" defer></script>
+    <script src="Scripts/employees.js" defer></script>
+    <script src="Scripts/customers.js" defer></script>
+    <script src="Scripts/main.js" defer></script>
     <title>Dönderbude</title>
 </head>
 
@@ -22,6 +22,19 @@
 
 
         <canvas id="hiddencanvas" id="canvas" width="1400" height="550"></canvas>
+
+        <img id="instructionButton" src="images/instructionButton.png" >
+
+        <span id="instructionBoard" class="is-hidden"> 
+            <ul>
+                <strong><u>Simulator Instructions:</u></strong> 
+            <li><b>Move employee:</b> Employee 1 (shift + Mousemove), Employee 2 (alt + Mousemove)</li>
+            <li><b>Get Order:</b> Order-Button for new Order. Then click on the shown ingredients and the wanted meal </li>
+            <li><b>Finish Order:</b> Complete the Order with Button "finished Order". The next customer will come forword automatically </li>
+            </ul>
+        </span>
+
+
 
             <div id="settings">
 
@@ -72,7 +85,7 @@
                         <label for="mitarbeiter">Mitarbeiter</label>
                         <input type="color" id="mitarbeiterFarbe" name="employeeColorPicker"  value="#66b2ff">
                         <br>
-                        <label for="teamBcolour">Kunden </label>
+                        <label for="customer">Kunden </label>
                         <input type="color" id="kundenFarbe" name="customerColorPicker"  value="#ff3333">
                         <br>
             </fieldset>
@@ -138,9 +151,20 @@
 
              <div id="nextCustomer"><button>Finished Order</button></div>
 
+             <div  id="moodEmployee">Employee average Mood</div>
+
+             <div id="moodCustomer">Customer average Mood</div>
+
         </div>
 
+
 <div id="newSimulation" class="is-hidden"><button> New Simulation</button></div>
+
+<div>
+<footer id="footer">
+    &#169; Endabgabe EIA2 WiSe22 by Neele Rauber, MKB3, Matrikel-Nr.: 266954, Hochschule Furtwangen 
+</footer>
+</div>
 
 
 

@@ -1,8 +1,16 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
+
 namespace Dönerladen {
 
     export class Doenerladen {
 
-        // Soccer - Field
+        //Dönerladen
         draw(): void {
 
             //Gesamtes Feld
@@ -138,8 +146,6 @@ namespace Dönerladen {
             crc2.closePath();
             crc2.fillStyle = "grey";
             crc2.fill();
-
-
         }
-    } 
+    }
 } 

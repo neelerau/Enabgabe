@@ -21,6 +21,61 @@ html{
     opacity: 30%;
  }
 
+#moodEmployee {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    width: 215px;
+    height: 80px;
+    left: 1110px;
+    top:150px;
+    position: absolute;
+    z-index: 5000;
+
+}
+
+
+#moodCustomer {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    width: 215px;
+    height: 80px;
+    left: 1110px;
+    top:250px;
+    position: absolute;
+    z-index: 5000;
+
+}
+ #instructionBoard {
+    top:300px;
+    font-size: 15px;
+    left: 1020px;
+    width : 370px;
+    height: 180px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: grey;
+    background-color:white;
+    justify-content: center;
+    z-index: 50000;
+    padding: 20px;
+
+ }
+
+ #instructionButton {
+    top:20px;
+    width : 50px;
+    height: 50px;
+    left: 1350px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    cursor: pointer;
+
+}
 
 #settings {
     width: 500px;
@@ -116,7 +171,7 @@ html{
     width: 215px;
     height: 80px;
     left: 1100px;
-    top: 520px;
+    top: 420px;
     position: absolute;
     z-index: 5000;
     
@@ -379,7 +434,6 @@ html{
     left: 55px;
     top: 490px;
     position:absolute;
-
 }
 
 #buttonmeal1 {
@@ -388,7 +442,6 @@ html{
     left: 425px;
     top: 575px;
     position:absolute;
-
 }
 
 #buttonmeal2 {
@@ -397,7 +450,6 @@ html{
     left: 420px;
     top: 508px;
     position:absolute;
-
 }
 
 #buttonmeal3 {
@@ -406,7 +458,6 @@ html{
     left: 350px;
     top: 570px;
     position:absolute;
-
 }
 
 #buttonmeal4 {
@@ -424,7 +475,7 @@ html{
     width: 205px;
     height: 20px;
     left: 1100px;
-    top: 470px;
+    top: 360px;
     position: absolute;
     z-index: 5000;
     padding: 5px;
@@ -434,10 +485,23 @@ html{
         color: black;
         background-color: #d1a0a0;
         width: 215px;
-        height: 30px;
+        height: 21px;
         left: 1100px;
-        top: 600px;
+        top: 490px;
         position: absolute;
-        z-index: 5000;
-        
+        z-index: 5000;    
+}
+
+#footer{
+    position: absolute;
+    display: absolute;
+    font-size: 15px;
+    width: 1500px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color:white;
+    margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+    bottom: 8px;
 }

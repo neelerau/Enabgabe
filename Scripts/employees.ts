@@ -1,3 +1,11 @@
+/*
+Dönersimulation
+Neele Rauber
+MKB3
+Matrikelnummer: 266954
+In Zusammenarbeit mit Alessia Carbone kreiert
+*/
+
 namespace Dönerladen {
 
     export class Employees extends Moveable {
@@ -32,9 +40,17 @@ namespace Dönerladen {
             crc2.fillStyle = this.color;
             crc2.fill();
 
+            //Average Mood
+            crc2.beginPath();
+            crc2.rect(1100, 100, 180, 10);
+            crc2.closePath();
+            crc2.fillStyle = this.strokecolor;
+            crc2.fill();
+
+
             setTimeout(() => {
                 this.strokecolor = "red";
-            },         2000);
+            },         250000);
 
         }
 
